@@ -5,6 +5,18 @@ function Hunt(huntName, huntDifficulty, huntDescription) {
   this.huntDescription = huntDescription;
 }
 
+function searchHunts(searchArray, huntsArray) {
+  for(var index = 0; index < huntsArray.length; index++) {
+    for(var index1 = 0; index1 < searchArray.length; index1++) {
+      for(var index2 = 0; index2 < huntsArray[index].huntOptions.length; index2++) {
+        if(searchArray[index1] === huntsArray[index].huntOptions[index2]) {
+          console.log("Output this hunt to advanced search list");
+        }
+      }
+    }
+  }
+}
+
 function clear() {
   $("input#hunt-name").val("");
   $("textarea#hunt-description").val("");
@@ -13,6 +25,7 @@ function clear() {
 
 $(function() {
 var huntsArray = [];
+var searchArray = [];
 
   $(".createHunt").submit(function(event) {
     event.preventDefault();
@@ -21,14 +34,23 @@ var huntsArray = [];
     var huntDescription = $("textarea#hunt-description").val();
     var theHunt = new Hunt(huntName, huntDifficulty, huntDescription);
     $("input:checkbox[name=huntOptions]:checked").each(function() {
-      theHunt.huntOptions.push(this);
-
+      theHunt.huntOptions.push($(this).val());
     });
     huntsArray.push(theHunt);
     clear();
     $(".create").hide();
     $(".home").show();
   });
+
+$(".searchHunt").submit(function(event) {
+    event.preventDefault();
+    $("input:checkbox[name=huntOptions]:checked").each(function() {
+      searchArray.push($(this).val());
+    });
+    console.log(searchArray.length);
+    searchHunts(searchArray, huntsArray);
+
+});
 
   $("#create-sidebar").click(function(event) {
     event.preventDefault();
