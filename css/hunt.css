@@ -1,7 +1,21 @@
-.create {
+/*.create {
+  display: none;
+}*/
+
+.home {
+  display: none;
+}
+.search {
   display: none;
 }
 
-.search {
-  display: none;
+#nav-bar {
+  text-align: center;
+}
+
+#hunt-description {
+  min-width: 700px;
+  max-width: 700px;
+  min-height: 300px;
+  max-height: 300px;
 }

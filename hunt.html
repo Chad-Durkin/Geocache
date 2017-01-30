@@ -14,20 +14,54 @@
           <h1>Welcome to the Hunts Page</h1>
         </div>
         <div class="create header">
-          <h1>Create a Hunt</h1>
+          <h2 id="side-create">Create a Hunt</h2>
         </div>
         <div class="search header">
-          <h1>Search for a Hunt</h1>
+          <h2 id="side-search">Search for a Hunt</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 sidebar">
+          <h2>Create Hunt</h2>
+          <h2>Advanced Search</h2>
+        </div>
+        <div class="col-md-9">
+          <div class="home body">
+            <h1>Current Hunts</h1>
+            <ul class="currentHunts">
+            </ul>
+          </div>
+          <div class="create body">
+            <form class="createHunt">
+              <div class="form-group">
+                <label for="huntName">Hunt Name:</label>
+                <input type="text" class="form-control" name="huntName">
+              </div>
+              <div class="form-group">
+                <h2>Difficulty</h2>
+                <label for="difficulty">Novice</label>
+                <input type="radio" class="fomr-control" name="beginner">
+                <label for="difficulty">Journeyman</label>
+                <input type="radio" class="fomr-control" name="beginner">
+                <label for="difficulty">Master</label>
+                <input type="radio" class="fomr-control" name="beginner">
+              </div>
+                <div class="form-group">
+                  <label for="huntDescription">Hunt Description:</label>
+                  <textarea class="form-control" row="1" id="hunt-description">
+                  </textarea>
+                </div>
+            </form>
+          </div>
+          <div class="search body">
+
+          </div>
         </div>
       </div>
 
-      <div class="home body">
-        <h1>Current Hunts</h1>
-        <ul class="currentHunts">
-        </ul>
-      </div>
-
-      <p><a href="index.html">HOME</a> <a href="forum.html">FORUM</a> <a href="msg.html">MESSAGE BOARD</a> </p>
+        <nav class="navbar navbar-default navbar-fixed-bottom" id="nav-bar">
+          <p><a href="index.html">HOME</a> <a href="forum.html">FORUM</a> <a href="msg.html">MESSAGE BOARD</a> </p>
+        </nav>
     </div>
   </body>
 </html>
