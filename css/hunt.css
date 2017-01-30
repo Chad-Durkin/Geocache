@@ -10,6 +10,14 @@
   display: none;
 }
 
+/*#matched-hunts {
+  display: none;
+}*/
+
+#no-matches {
+  display: none;
+}
+
 #nav-bar {
   text-align: center;
 }
