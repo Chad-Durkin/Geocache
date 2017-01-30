@@ -14,10 +14,10 @@
           <h1>Welcome to the Hunts Page</h1>
         </div>
         <div class="create header">
-          <h2 id="side-create">Create a Hunt</h2>
+          <h1 id="side-create">Create a Hunt</h1>
         </div>
         <div class="search header">
-          <h2 id="side-search">Search for a Hunt</h2>
+          <h1 id="side-search">Search for a Hunt</h1>
         </div>
       </div>
       <div class="row">
@@ -25,12 +25,15 @@
           <h2>Create Hunt</h2>
           <h2>Advanced Search</h2>
         </div>
+        <!-- The Body Of Each Page -->
+        <!-- Home Body -->
         <div class="col-md-9">
           <div class="home body">
             <h1>Current Hunts</h1>
             <ul class="currentHunts">
             </ul>
           </div>
+          <!-- Create Body -->
           <div class="create body">
             <form class="createHunt">
               <div class="form-group">
@@ -40,21 +43,56 @@
               <div class="form-group">
                 <h2>Difficulty</h2>
                 <label for="difficulty">Novice</label>
-                <input type="radio" class="fomr-control" name="beginner">
+                <input type="radio" name="difficultyCreate" value="novice" checked>
                 <label for="difficulty">Journeyman</label>
-                <input type="radio" class="fomr-control" name="beginner">
+                <input type="radio" name="difficultyCreate" value="journeyman">
                 <label for="difficulty">Master</label>
-                <input type="radio" class="fomr-control" name="beginner">
+                <input type="radio" name="difficultyCreate" value="master">
+              </div>
+              <div class="form-group">
+                <h2>Gear Required</h2>
+                <label for="gear">Hiking Boots</label>
+                <input type="checkbox" name="hikingBoots" value="hikingBoots">
+                <label for="gear">Backpack</label>
+                <input type="checkbox" name="backpack" value="backpack">
+                <label for="gear">Sleeping Bag</label>
+                <input type="checkbox" name="sleepingbag" value="sleepingbag">
+                <label for="gear">Bear Spray</label>
+                <input type="checkbox" name="bearSpray" value="bearSpray">
               </div>
                 <div class="form-group">
                   <label for="huntDescription">Hunt Description:</label>
                   <textarea class="form-control" row="1" id="hunt-description">
                   </textarea>
                 </div>
+                <button type="submit" class="btn btn-primary">Create Hunt</button>
             </form>
           </div>
+          <!-- Search Body -->
           <div class="search body">
-
+            <form class="searchHunt">
+              <div class="form-group">
+                <h2>Difficulty</h2>
+                <label for="difficulty">Novice</label>
+                <input type="checkbox" name="difficultySearch" value="novice">
+                <label for="difficulty">Journeyman</label>
+                <input type="checkbox" name="difficultySearch" value="journeyman">
+                <label for="difficulty">Master</label>
+                <input type="checkbox" name="difficultySearch" value="master">
+              </div>
+              <div class="form-group">
+                <h2>Gear Required</h2>
+                <label for="gear">Hiking Boots</label>
+                <input type="checkbox" name="hikingBoots" value="hikingBoots">
+                <label for="gear">Backpack</label>
+                <input type="checkbox" name="backpack" value="backpack">
+                <label for="gear">Sleeping Bag</label>
+                <input type="checkbox" name="sleepingbag" value="sleepingbag">
+                <label for="gear">Bear Spray</label>
+                <input type="checkbox" name="bearSpray" value="bearSpray">
+              </div>
+              <button type="submit" class="btn btn-primary">Search</button>
+            </form>
           </div>
         </div>
       </div>
