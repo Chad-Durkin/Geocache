@@ -12,6 +12,10 @@ Hunt.prototype = {
     {
       for(var i = 0; i < this.huntOptions.length; i++) {
         if(this.huntOptions[i] === searchArray[index]) {
+<<<<<<< HEAD
+=======
+          console.log("append this");
+>>>>>>> workingCarbon
           $("#matched-hunts").append("<li class='listedHunts'>" + this.huntName + "</li>")
         }
       }

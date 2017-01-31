@@ -2,5 +2,10 @@ body {
     background-image: url("../img/Yosemite 3.jpg");
     background-size: cover;
     height: 100vh;
-    color: #3C464F;
+    /*color: #3C464F;*/
+    color: white;
+}
+
+#gear, #catalogedHunts, #huntIdeas, #questions {
+  display: none;
 }

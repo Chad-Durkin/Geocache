@@ -51,7 +51,6 @@ $(function () {
     forumObj.printString();
 
     checker();
-
     $('#gear1').click(function() {
       event.preventDefault();
       $('#gear').show();
