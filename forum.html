@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-  <link rel="stylesheet" href="css/hunt.css" type="text/css">
+  <link rel="stylesheet" href="css/forum.css" type="text/css">
   <script src="js/jquery-3.1.1.js"></script>
   <script src="js/forum.js"></script>
   <title>Forum Page</title>
@@ -11,25 +11,57 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>Create Thread</h1>
-        <form id="thread">
-        <label for="threadTitle">Thread Title:</label>
-        <input id="threadTitle" type="text" name="createThread" value=""><br>
-        <label for="radioInput">Select Category</label>
-        <input type="radio" name="name" value="Gear">Gear
-        <input type="radio" name="name" value="Cataloged Hunts">Cataloged Hunts
-        <input type="radio" name="name" value="Hunt Ideas">Hunt Ideas
-        <input type="radio" name="name" value="Questions">Questions<br>
-        <textarea id="threadBody" name="name" rows="8" cols="60"></textarea><br>
-        <button type="submit">Submit</button>
+        <form class="search">
+          <h1>Search our threads</h1>
+          <h3>Please pick a category</h3>
+          <input id="gear1" type="radio" name="search" value="Gear">Gear
+          <input id="catalogedHunts1" type="radio" name="search" value="Cataloged Hunts">Cataloged Hunts
+          <input id="huntIdeas1" type="radio" name="search" value="Hunt Ideas">Hunt Ideas
+          <input id="questions1" type="radio" name="search" value="Questions">Questions<br>
         </form>
       </div>
-
-      <h1>Output testing</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Create Thread</h1>
+        <form id="thread">
+          <label for="threadTitle">Thread Title:</label>
+          <input id="threadTitle" type="text" name="createThread" value=""><br>
+          <label for="radioInput">Select Category</label>
+          <input type="radio" name="name" value="Gear">Gear
+          <input type="radio" name="name" value="Cataloged Hunts">Cataloged Hunts
+          <input type="radio" name="name" value="Hunt Ideas">Hunt Ideas
+          <input type="radio" name="name" value="Questions">Questions<br>
+          <textarea id="threadBody" name="name" rows="8" cols="60"></textarea><br>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
       <div id="output">
-
+      </div>
+      <div class="results">
+        <div id="gear">
+          <h1>Gear</h1>
+          <ul class="gear">
+          </ul>
+        </div>
+        <div id="catalogedHunts">
+          <h1>Cataloged Hunts</h1>
+          <ul class="catalogedHunts">
+          </ul>
+        </div>
+        <div id="huntIdeas">
+          <h1>Hunt Ideas</h1>
+          <ul class="huntIdeas">
+          </ul>
+        </div>
+        <div id="questions">
+          <h1>Questions</h1>
+          <ul class="questions">
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+</div>
 </body>
 </html>
