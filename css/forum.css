@@ -1,11 +1,30 @@
 body {
+    text-align: center;
     background-image: url("../img/Yosemite 3.jpg");
     background-size: cover;
     height: 100vh;
     /*color: #3C464F;*/
-    color: white;
+    color: #3C464F;
 }
 
 #gear, #catalogedHunts, #huntIdeas, #questions {
   display: none;
+}
+
+#nav-bar {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+#threadTitle {
+  width: 500px;
+}
+
+.top {
+  margin-bottom: 200px;
+}
+
+.bottom {
+  color: white;
 }
