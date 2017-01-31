@@ -2,5 +2,14 @@ body {
     background-image: url("../img/Yosemite 3.jpg");
     background-size: cover;
     height: 100vh;
-    color: #3C464F;
+    /*color: #3C464F;*/
+    color: orange;
+}
+
+.create {
+  display: none;
+}
+
+.search {
+  display: none;
 }
