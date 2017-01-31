@@ -13,16 +13,9 @@ Hunt.prototype = {
     {
       for(var i = 0; i < this.huntOptions.length; i++) {
         if(this.huntOptions[i] === searchArray[index]) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-          console.log("append this");
->>>>>>> workingCarbon
-=======
           $("#matched-hunts").append("<li class='listedHunts" + listCounter + "'> <strong>Hunt Name:</strong> <em>" + this.huntName + "</em> <strong>Difficulty:</strong> <em>" + this.huntDifficulty + "</em></li>");
           $(".listedHunts" + listCounter).append("<p> <strong>Description:</strong> <em>" + this.huntDescription + "</em></p>");
           listCounter++;
->>>>>>> hunt-branch
         }
       }
     }
