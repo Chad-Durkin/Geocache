@@ -5,6 +5,7 @@ function Hunt(huntName, huntDifficulty, huntDescription) {
   this.huntDescription = huntDescription;
 }
 
+//Added in comment for commit sake
 Hunt.prototype = {
   searchHunt: function (searchArray) {
     for(var index = 0; index < searchArray.length; index++)
