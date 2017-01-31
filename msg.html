@@ -1,14 +1,86 @@
 <!DOCTYPE html>
 <html>
   <head>
-    < <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/msg.css" type="text/css">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/msg.js"></script>
     <title>Messages</title>
   </head>
   <body>
-
+    <div class="container">
+      <div class="jumbotron">
+        <div class="home header">
+          <h1>Community Message Board</h1>
+        </div>
+        <div class="create header">
+          <h1>Create a New Message</h1>
+        </div>
+        <div class="search header">
+          <h1>Search For a Message</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 sidebar">
+          <h3 id="home-sidebar">Message Board Home</h3>
+          <h3 id="create-sidebar">Create Message</h3>
+          <h3 id="search-sidebar">Search for Message</h3>
+        </div>
+        <!-- The Body Of Each Page -->
+        <!-- Home Body -->
+        <div class="col-md-9">
+          <div class="home body">
+            <h1 id="cur-msg">Current Messages</h1>
+            <ul id="current-messages">
+            </ul>
+          </div>
+          <!-- Create Body -->
+          <div class="create body">
+            <form class="createMessage">
+              <div class="form-group">
+                <h3>Message Title:</h3>
+                <input id="msg-title" type="text" name="messageTitle" class="form-control" required>
+              </div>
+              <div class="from-group">
+                <h3>Message Privacy:</h3>
+                <label for="privacy">Public</label>
+                <input type="radio" name="privacy" value="public" checked>
+                <label for="privacy">Private</label>
+                <input type="radio" name="privacy" value="private">
+              </div>
+              <div class="form-group">
+                <h3>Message Body:</h3>
+                <textarea placeholder="Enter Message Here..." class="form-control" id="msg-body" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" name="submit-msg">Create Message</button>
+            </form>
+          </div>
+          <!-- Search Body -->
+          <div class="search body">
+            <form class="searchMessage">
+              <div class="form-group">
+                <h3>Seach Title:</h3>
+                <input type="text" class="form-control" name="searchName" id="search-name">
+              </div>
+              <div class="form-group">
+                <h3>Search by Privacy:</h3>
+                <label for="publicSearch">Public</label>
+                <input type="checkbox" name="searchPrivacy" value="public">
+                <label for="privateSearch">Private</label>
+                <input type="checkbox" name="searchPrivacy" value="private">
+              </div>
+              <button type="submit" class="btn btn-primary" name="search">Search</button>
+            </form>
+            <div class="searchOutput">
+              <ul id="matched-msgs">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+        <nav class="navbar navbar-default navbar-fixed-bottom" id="nav-bar">
+          <p class="navbarText"><a href="index.html">HOME</a> <a href="forum.html">FORUM</a> <a href="hunt.html">HUNT</a> </p>
+        </nav>
+    </div>
   </body>
 </html>
