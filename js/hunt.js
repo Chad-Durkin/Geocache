@@ -10,42 +10,14 @@ Hunt.prototype = {
     for(var index = 0; index < searchArray.length; index++)
     {
       for(var i = 0; i < this.huntOptions.length; i++) {
-        console.log(this.huntOptions[i] + " hunt option");
-        console.log(searchArray[index]+ " search option");
         if(this.huntOptions[i] === searchArray[index]) {
           console.log("append this");
-          $("#matched-hunts").append("<li>" + this.huntName + "</li>")
+          $("#matched-hunts").append("<li class='listedHunts'>" + this.huntName + "</li>")
         }
       }
     }
   }
 };
-
-
-// function searchHuntsArray(searchArray, huntsArray) {
-// var huntCounter = 0;
-//   for(var index = 0; index < huntsArray.length; index++) {
-//     for(var index1 = 0; index1 < huntsArray[index].huntOptions.length; index1++) {
-//       huntCounter = searchOptionsArray(huntsArray[index].huntOptions, searchArray[index2]);
-//     }
-//   }
-//   if(huntCounter > 0) {
-//     $("#matched-hunts").show();
-//   } else {
-//     $("#no-matches").show();
-//   }
-// }
-//
-// function searchOptionsArray(theHunt, searchItem, huntCounter) {
-//   for(var index = 0; index < searchArray[index]; index++) {
-//     if(searchItem === theHunt.huntOptions[index]) {
-//       console.log("Output this hunt to advanced search list");
-//       $("#matched-hunts").append("<li>" + huntsArray[index].huntName + "</li>")
-//       return huntCounter += 1;
-//     }
-//   }
-//   return huntCounter;
-// }
 
 function clear() {
   $("input#hunt-name").val("");
@@ -55,7 +27,6 @@ function clear() {
 
 $(function() {
 var huntsArray = [];
-var searchArray = [];
 
   $(".createHunt").submit(function(event) {
     event.preventDefault();
@@ -74,14 +45,14 @@ var searchArray = [];
 
 $(".searchHunt").submit(function(event) {
     event.preventDefault();
+    var searchArray = [];
+    $("#matched-hunts").empty();
     $("input:checkbox[name=huntOptions]:checked").each(function() {
       searchArray.push($(this).val());
     });
-
     for(var index = 0; index < huntsArray.length; index++) {
       huntsArray[index].searchHunt(searchArray);
     }
-
 });
 
   $("#create-sidebar").click(function(event) {
@@ -104,6 +75,4 @@ $(".searchHunt").submit(function(event) {
     $(".search").hide();
     $(".home").show();
   });
-
-
 });
