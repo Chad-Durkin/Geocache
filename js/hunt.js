@@ -27,6 +27,7 @@ function clear() {
 
 $(function() {
 var huntsArray = [];
+var listCounter = 0;
 
   $(".createHunt").submit(function(event) {
     event.preventDefault();
@@ -41,6 +42,10 @@ var huntsArray = [];
     clear();
     $(".create").hide();
     $(".home").show();
+
+    $("#current-hunts").append("<li class='currentHuntList" + listCounter + "'> Hunt Name: " + theHunt.huntName + " Difficulty: " + theHunt.huntDifficulty + "</li>");
+    $(".currentHuntList" + listCounter).append("<p> Description: " + theHunt.huntDescription + "<p>");
+    listCounter++;
   });
 
 $(".searchHunt").submit(function(event) {
@@ -57,6 +62,8 @@ $(".searchHunt").submit(function(event) {
 
   $("#create-sidebar").click(function(event) {
     event.preventDefault();
+    clear();
+    $("#matched-hunts").empty();
     $(".home").hide();
     $(".search").hide();
     $(".create").show();
@@ -64,6 +71,8 @@ $(".searchHunt").submit(function(event) {
 
   $("#search-sidebar").click(function(event) {
     event.preventDefault();
+    clear();
+    $("#matched-hunts").empty();
     $(".home").hide();
     $(".create").hide();
     $(".search").show();
@@ -71,6 +80,8 @@ $(".searchHunt").submit(function(event) {
 
   $("#home-sidebar").click(function(event) {
     event.preventDefault();
+    clear();
+    $("#matched-hunts").empty();
     $(".create").hide();
     $(".search").hide();
     $(".home").show();
