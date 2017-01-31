@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function Hunt(huntName, huntDifficulty, huntDescription) {
   this.huntName = huntName;
   this.huntDifficulty = huntDifficulty;
@@ -78,7 +77,6 @@ $(".searchHunt").submit(function(event) {
     $(".home").show();
   });
 });
-=======
 function Hunt(huntName, huntDifficulty, huntDescription) {
   this.huntName = huntName;
   this.huntDifficulty = huntDifficulty;
@@ -158,4 +156,3 @@ $(".searchHunt").submit(function(event) {
     $(".home").show();
   });
 });
->>>>>>> thehunt-branch
