@@ -7,7 +7,8 @@ body {
 }
 
 .jumbotron {
-  background-color: rgba(60, 70, 79, 0.8);
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
 }
 
 .create {
@@ -16,6 +17,31 @@ body {
 
 .search {
   display: none;
+}
+
+#msg-title {
+  min-width: 700px;
+  max-width: 700px;
+}
+
+#msg-body {
+  min-width: 700px;
+  max-width: 700px;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+#search-name {
+  min-width: 700px;
+  max-width: 700px;
+}
+.msgDescription {
+  display: none;
+}
+
+.msgList {
+  font-weight: bolder;
+  font-size: 20px;
 }
 
 #nav-bar {

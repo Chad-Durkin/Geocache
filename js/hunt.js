@@ -25,7 +25,7 @@ Hunt.prototype = {
 function clear() {
   $("input#hunt-name").val("");
   $("textarea#hunt-description").val("");
-  $('input[name=huntOptions]').prop('checked', false);
+  $("input[name=huntOptions]").prop("checked", false);
 }
 
 $(function() {

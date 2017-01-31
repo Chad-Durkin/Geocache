@@ -4,13 +4,13 @@ function Message(title, privacy, body) {
   this.msgPrivacy = privacy;
   this.msgPassword;
   this.msgBody = body;
+  this.msgNumber;
 }
 
-
-
-
-
-
+function clear() {
+  $("input#msg-title").val("");
+  $("textarea#msg-body").val("");
+}
 
 function checkForPrivate(newMsg) {
    if(newMsg.msgPrivacy === "private") {
@@ -18,13 +18,30 @@ function checkForPrivate(newMsg) {
      newMsg.msgPassword = msgPassword;
    }
    return newMsg;
- }
+ };
 
-
+function returnMsgInfo(msgNumber, msgArray, listId) {
+  for(var index = 0; index < msgArray.length; index++)
+  {
+    if(msgArray[index].msgNumber === msgNumber) {
+      if(msgArray[index].msgPrivacy === "private") {
+        var passCheck = prompt("Enter the message password");
+        if(msgArray[index].msgPassword === passCheck) {
+          $(listId).children().toggle();
+        } else {
+          alert("You entered the incorrect password.");
+        }
+      } else {
+        $(listId).children().toggle();
+      }
+    }
+  }
+}
 
 //User Logic
 $(function() {
 var msgArray = [];
+var msgCounter = 0;
 
   $(".createMessage").submit(function(event) {
     event.preventDefault();
@@ -33,15 +50,28 @@ var msgArray = [];
     var msgBody = $("textarea#msg-body").val();
     var newMsg = new Message(msgTitle, msgPrivacy, msgBody);
     newMsg = checkForPrivate(newMsg);
+    newMsg.msgNumber = "msgNumber" + msgCounter;
     msgArray.push(newMsg);
 
+    $("#current-messages").append("<li class='msgList' id='msgNumber" + msgCounter + "'>" + newMsg.msgTitle + " - " + newMsg.msgPrivacy + "</li>");
+    $("#msgNumber" + msgCounter).append("<p class='msgDescription' id='msgDescription" + msgCounter + "'> Message: " + newMsg.msgBody + "</p>");
 
+    clear();
+    $(".create").hide();
+    $(".search").hide();
+    $(".home").show();
+    $(".msgList").last().click(function(event) {
+      event.preventDefault();
+      returnMsgInfo(this.id, msgArray, this);
+    });
 
-  })
+    msgCounter++;
+  });
 
 
   $("#create-sidebar").click(function(event) {
   event.preventDefault();
+  clear();
   $(".home").hide();
   $(".search").hide();
   $(".create").show();
@@ -49,6 +79,7 @@ var msgArray = [];
 
 $("#search-sidebar").click(function(event) {
   event.preventDefault();
+  clear();
   $(".home").hide();
   $(".create").hide();
   $(".search").show();
@@ -56,6 +87,7 @@ $("#search-sidebar").click(function(event) {
 
 $("#home-sidebar").click(function(event) {
   event.preventDefault();
+  clear();
   $(".create").hide();
   $(".search").hide();
   $(".home").show();

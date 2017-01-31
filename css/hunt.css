@@ -7,7 +7,8 @@ body {
 }
 
 .jumbotron {
-  background-color: rgba(60, 70, 79, 0.7);
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
 }
 
 .create {
@@ -42,4 +43,9 @@ body {
   max-width: 700px;
   min-height: 300px;
   max-height: 300px;
+}
+
+#hunt-name {
+  min-width: 700px;
+  max-width: 700px;
 }
