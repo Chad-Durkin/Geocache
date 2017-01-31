@@ -8,11 +8,14 @@ function Hunt(huntName, huntDifficulty, huntDescription) {
 //Added in comment for commit sake
 Hunt.prototype = {
   searchHunt: function (searchArray) {
+    var listCounter = 0;
     for(var index = 0; index < searchArray.length; index++)
     {
       for(var i = 0; i < this.huntOptions.length; i++) {
         if(this.huntOptions[i] === searchArray[index]) {
-          $("#matched-hunts").append("<li class='listedHunts'>" + this.huntName + "</li>")
+          $("#matched-hunts").append("<li class='listedHunts" + listCounter + "'> <strong>Hunt Name:</strong> <em>" + this.huntName + "</em> <strong>Difficulty:</strong> <em>" + this.huntDifficulty + "</em></li>");
+          $(".listedHunts" + listCounter).append("<p> <strong>Description:</strong> <em>" + this.huntDescription + "</em></p>");
+          listCounter++;
         }
       }
     }
@@ -43,8 +46,8 @@ var listCounter = 0;
     $(".create").hide();
     $(".home").show();
 
-    $("#current-hunts").append("<li class='currentHuntList" + listCounter + "'> Hunt Name: " + theHunt.huntName + " Difficulty: " + theHunt.huntDifficulty + "</li>");
-    $(".currentHuntList" + listCounter).append("<p> Description: " + theHunt.huntDescription + "<p>");
+    $("#current-hunts").append("<li class='currentHuntList" + listCounter + "'> <strong>Hunt Name:</strong> <em>" + theHunt.huntName + "</em> <strong>Difficulty:</strong> <em>" + theHunt.huntDifficulty + "</em></li>");
+    $(".currentHuntList" + listCounter).append("<p> <strong>Description:</strong> <em>" + theHunt.huntDescription + "</em></p>");
     listCounter++;
   });
 
