@@ -14,10 +14,10 @@
           <h1>Welcome to the Hunts Page</h1>
         </div>
         <div class="create header">
-          <h1 id="side-create">Create a Hunt</h1>
+          <h1>Create a Hunt</h1>
         </div>
         <div class="search header">
-          <h1 id="side-search">Search for a Hunt</h1>
+          <h1>Search for a Hunt</h1>
         </div>
       </div>
       <div class="row">
@@ -31,14 +31,14 @@
         <div class="col-md-9">
           <div class="home body">
             <h1>Current Hunts</h1>
-            <ul class="currentHunts">
+            <ul id="current-hunts">
             </ul>
           </div>
           <!-- Create Body -->
           <div class="create body">
             <form class="createHunt">
               <div class="form-group">
-                <label for="huntName">Hunt Name:</label>
+                <h3>Hunt Name:</h3>
                 <input type="text" id="hunt-name" class="form-control" name="huntName" required>
               </div>
               <div class="form-group">
@@ -62,7 +62,7 @@
                 <input type="checkbox" name="huntOptions" value="bearSpray">
               </div>
                 <div class="form-group">
-                  <label for="huntDescription">Hunt Description:</label>
+                  <h3>Hunt Description:</h3>
                   <textarea placeholder="Enter Description Here..." class="form-control" id="hunt-description" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Create Hunt</button>
@@ -102,7 +102,7 @@
         </div>
       </div>
         <nav class="navbar navbar-default navbar-fixed-bottom" id="nav-bar">
-          <p><a href="index.html">HOME</a> <a href="forum.html">FORUM</a> <a href="msg.html">MESSAGE BOARD</a> </p>
+          <p class="navbarText"><a href="index.html">HOME</a> <a href="forum.html">FORUM</a> <a href="msg.html">MESSAGE BOARD</a> </p>
         </nav>
     </div>
   </body>
