@@ -1,4 +1,4 @@
 $(function() {
-  $('#myCarousel').carousel();
+  $('#myCarousel').carousel({interval: 20000});
 
 });

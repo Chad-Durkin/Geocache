@@ -1,14 +1,18 @@
 body {
-    background-image: url("../img/Yosemite 3.jpg");
+    background-image: url("../img/Yosemite 4.jpg");
     background-size: cover;
     height: 100vh;
-    color: #3C464F;
+    color: white;
 }
 
-a {
-  color: #3C464F;
-  font-size: 40px;
-  
+.jumbotron {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.item a {
+  color: white;
+  font-size: 30px;
+
 }
 
 .heading {
@@ -16,24 +20,67 @@ a {
 
 }
 
-#carousel {
+.pickOne {
+ color: white;
+}
+
+#myCarousel {
+  margin-top: 100px;
   text-align: center;
+  color: white;
 }
 
 .carousel-control.left, .carousel-control.right {
     background-image: none
 }
 
+h3 {
+  font-size: 30px;
+}
+
 p {
+  /*margin-top: 50px;*/
   width: 75%;
   margin-right: auto;
   margin-left: auto;
   font-size: 20px;
+
   /*background-color: rgba(220, 220, 220, 0.6);*/
+}
+
+h4 {
+  font-size: 25px;
+  color: white;
+}
+
+ul {
+  font-size: 20px;
+  list-style: none;
 }
 
 div img {
   border: 1px black solid;
+}
+
+a {
+  font-size: 30px;
+  color: white;
+}
+#nav-bar {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.navbarText {
+  padding-top: 13px;
+}
+
+.navbarText a {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 50px;
+  font-size: 30px;
 }
 /*.single-item {
   margin-left: auto;
