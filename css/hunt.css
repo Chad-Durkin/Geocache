@@ -1,10 +1,10 @@
 body {
-    background-image: url("../img/Yosemite 3.jpg");
+    background-image: url("../img/Mountain Range.jpg");
     background-size: cover;
     height: 100vh;
     background-attachment: fixed;
     /*color: #3C464F;*/
-    color: #3C464F;
+    color: white;
 }
 
 .sidebar {
@@ -16,6 +16,9 @@ body {
   text-align: center;
 }
 
+.pushDown {
+  margin-top: 50px;
+}
 .create {
   display: none;
 }
@@ -25,7 +28,7 @@ body {
 }
 
 #current-hunts {
-  color: orange;
+  color: white;
   font-size: 20px;
 }
 /*Displayed hunts info*/
