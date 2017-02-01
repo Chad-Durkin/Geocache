@@ -59,13 +59,34 @@ body {
   max-width: 700px;
 }
 
-.steps {
-  min-width: 600px;
-  max-width: 600px;
+.coords {
+  width: 70px;
 }
 
-.coords {
-  
+.degreesPre {
+  margin-right: 3px;
+}
+
+.coordDegree {
+  float: left;
+  font-size: 30px;
+  margin-left: 3px;
+}
+
+.step1Coords {
+  float: left;
+}
+
+.coordPeriod {
+  float: left;
+  font-size: 30px;
+  margin-right: 3px;
+}
+
+.compass {
+  float: left;
+  width: 50px;
+  margin-right: 5px;
 }
 
 #nav-bar {

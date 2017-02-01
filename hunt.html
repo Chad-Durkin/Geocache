@@ -79,20 +79,44 @@
               </div>
                 <div class="form-group">
                   <h3>Hunt Description:</h3>
-                  <textarea placeholder="Enter Description Here..." class="form-control" id="hunt-description" required></textarea>
+                  <textarea placeholder="Tips, What to expect, Animals/spots to look out for, Your own thoughts, etc." class="form-control" id="hunt-description" required></textarea>
                 </div>
-                <h3>Hunt Steps:</h3>
+                <h3>Hunt Directions:</h3>
+                <div class="step">
                 <div class="row">
-                  <div class="col-md-9">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <h4>Step 1: </h4>
                       <input type="text" class="form-control steps" name="steps" id="step-one" required>
                     </div>
                   </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <h4>Coords: </h4>
-                      <input type="number" class="form-control coords" name="coords" id="step-one-coord" required>
+                </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <h4>Latitude: </h4>
+                        <select class="form-control compass">
+                          <option>N</option>
+                          <option>S</option>
+                        </select>
+                        <input type="number" class="form-control step1Coords degreesPre coords" name="coords" required>
+                        <p class="coordPeriod">.</p>
+                        <input type="number" class="form-control step1Coords degreesPost coords" name="coords" required>
+                        <p class="coordDegree">˚</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <h4>Longitude: </h4>
+                        <select class="form-control compass">
+                          <option>E</option>
+                          <option>W</option>
+                        </select>
+                        <input type="number" class="form-control step1Coords degreesPre coords" name="coords" required>
+                        <p class="coordPeriod">.</p>
+                        <input type="number" class="form-control step1Coords degreesPost coords" name="coords" required>
+                        <p class="coordDegree">˚</p>
+                      </div>
                     </div>
                   </div>
                 </div>
