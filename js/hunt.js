@@ -43,10 +43,11 @@ function clickHunt(huntsArray) {
         })
         console.log("here1");
         $(".showHuntDescription").text(huntsArray[index].huntDescription);
+        var stepCoord;
         for(var index2 = 0; index2 < huntsArray[index].huntSteps.length; index2++) {
           console.log("here2");
-          var stepCoord = "Latitude: " + huntsArray[index].huntCoordDirection[0] + " " + huntsArray[index].huntStepsCoords[index2][0] + "." + huntsArray[index].huntStepsCoords[index2][1] + "˚ Longitude: " + huntsArray[index].huntCoordDirection[1] + " " + huntsArray[index].huntStepsCoords[index2][2] + "." + huntsArray[index].huntStepsCoords[index2][3] + "˚";
-          
+          stepCoord = "Latitude: " + huntsArray[index].huntCoordDirection[0] + " " + huntsArray[index].huntStepsCoords[index2][0] + "." + huntsArray[index].huntStepsCoords[index2][1] + "˚ Longitude: " + huntsArray[index].huntCoordDirection[1] + " " + huntsArray[index].huntStepsCoords[index2][2] + "." + huntsArray[index].huntStepsCoords[index2][3] + "˚";
+          $(".showHuntsSteps").append("<li><strong>Step " + (index2 + 1) + ":</strong> "  + huntsArray[index].huntSteps[index2] + "</li> <li><strong>Step " + (index2 + 1) + " Coords:</strong> " + stepCoord + "</li>");
         }
       }
     }
