@@ -50,7 +50,11 @@ function dupMsgName(msgArray, msgName) {
   for(var index = 0; index < msgArray.length; index++) {
     if(msgArray[index].msgTitle === msgName) {
       var newName = prompt("Theres already a message with that name, choose another name!");
-      dupsMsgName(msgArray, newName);
+      dupMsgName(msgArray, newName);
+      if(newName === null) {
+        var newName = prompt("Theres already a message with that name, choose another name!");
+        dupMsgName(msgArray, newName);
+      }
     }
   }
   return msgName;
