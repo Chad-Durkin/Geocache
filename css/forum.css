@@ -1,29 +1,56 @@
 body {
     text-align: center;
-    background-image: url("../img/Yosemite 3.jpg");
+    background-image: url("../img/El Capitan 2.jpg");
     background-size: cover;
+    background-attachment: fixed;
     height: 100vh;
-    /*color: #3C464F;*/
-    color: #3C464F;
+}
+
+li {
+  font-size: 20px;
+  list-style: none;
+  width: 60%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.results {
+  overflow: auto;
+}
+
+#output {
+  color: white;
+}
+
+.navbar {
+  text-align: left;
+  font-size: 20px;
+}
+
+.navbar a {
+  color: white;
 }
 
 #gear, #catalogedHunts, #huntIdeas, #questions {
   display: none;
 }
 
-#nav-bar {
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
+#gear1, #catalogedHunts1, #huntIdeas1, #questions1 {
+  font-size: 20px;
+  margin-left: 10px;
 }
 
-.navbarText {
-  padding-top: 13px;
+.search {
+  font-size: 20px;
 }
 
-.navbarText a{
-  padding-left: 20px;
-  padding-right: 20px;
+#thread {
+  font-size: 15px;
+}
+
+#submit {
+  color: blue;
 }
 
 #threadTitle {
@@ -31,7 +58,8 @@ body {
 }
 
 .top {
-  margin-bottom: 200px;
+  margin-bottom: 100px;
+  color: white;
 }
 
 .bottom {

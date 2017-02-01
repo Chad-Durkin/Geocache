@@ -9,9 +9,19 @@
 </head>
 <body>
   <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="navbar">
+          <a href="hunt.html">Hunt</a><br>
+          <a href="msg.html">Messages</a><br>
+          <a href="forum.html">Forum</a><br>
+          <a href="index.html">Home</a><br>
+        </div>
+      </div>
+    </div>
     <div class="row top">
       <div class="col-md-12">
-        <h1>Create Thread</h1>
+        <h1><u>Create Thread</u></h1>
         <form id="thread">
           <label for="threadTitle">Thread Title:</label>
           <input id="threadTitle" type="text" name="createThread"><br>
@@ -21,22 +31,22 @@
           <input type="radio" name="name" value="Hunt Ideas">Hunt Ideas
           <input type="radio" name="name" value="Questions">Questions<br>
           <textarea id="threadBody" name="name" rows="10" cols="100"></textarea><br>
-          <button type="submit">Submit</button>
+          <button id="submit" type="submit">Submit</button>
+          <h3 id="output">
+          </h3>
         </form>
       </div>
     </div>
     <div class="row bottom">
       <div class="col-md-12">
+        <h1><u>Search threads</u></h1>
+        <h3>Please pick a category</h3>
         <form class="search">
-          <h1>Search our threads</h1>
-          <h3>Please pick a category</h3>
           <input id="gear1" type="radio" name="name" value="Gear">Gear
           <input id="catalogedHunts1" type="radio" name="name" value="Cataloged Hunts">Cataloged Hunts
           <input id="huntIdeas1" type="radio" name="name" value="Hunt Ideas">Hunt Ideas
           <input id="questions1" type="radio" name="name" value="Questions">Questions<br>
         </form>
-        <div id="output">
-        </div>
         <div class="results">
           <div id="gear">
             <h1>Gear</h1>
@@ -45,25 +55,22 @@
           </div>
           <div id="catalogedHunts">
             <h1>Cataloged Hunts</h1>
-            <ul class="catalogedHunts">
+            <ul class="catalogedHunts" style="overflow:auto">
             </ul>
           </div>
           <div id="huntIdeas">
             <h1>Hunt Ideas</h1>
-            <ul class="huntIdeas">
+            <ul class="huntIdeas" style="overflow:auto">
             </ul>
           </div>
           <div id="questions">
             <h1>Questions</h1>
-            <ul class="questions">
+            <ul class="questions" style="overflow:auto">
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <nav class="navbar navbar-default navbar-fixed-bottom" id="nav-bar">
-      <p class="navbarText"><a href="index.html">HOME</a> <a href="hunt.html">HUNT</a> <a href="msg.html">MESSAGE BOARD</a> </p>
-    </nav>
   </div>
 </div>
 </body>
