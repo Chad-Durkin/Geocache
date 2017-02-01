@@ -30,7 +30,7 @@ function clear() {
 
 $(function() {
 var huntsArray = [];
-var listCounter = 0;
+var listCounter = 1;
 
   $(".createHunt").submit(function(event) {
     event.preventDefault();
@@ -47,7 +47,7 @@ var listCounter = 0;
     $(".home").show();
 
     $("#current-hunts").append("<li class='currentHuntList" + listCounter + "'> <strong>Hunt Name:</strong> <em>" + theHunt.huntName + "</em> <strong>Difficulty:</strong> <em>" + theHunt.huntDifficulty + "</em></li>");
-    $(".currentHuntList" + listCounter).append("<p> <strong>Description:</strong> <em>" + theHunt.huntDescription + "</em></p>");
+    $(".currentHuntList" + listCounter).append("<p class='currentHuntListInfo" + listCounter + "'> <strong>Description:</strong> <em>" + theHunt.huntDescription + "</em></p>");
     listCounter++;
   });
 
