@@ -5,12 +5,12 @@ function Message(title, privacy, body) {
   this.msgPassword;
   this.msgBody = body;
   this.msgNumber;
-}
+};
 
 function clear() {
   $("input#msg-title").val("");
   $("textarea#msg-body").val("");
-}
+};
 
 function checkForPrivate(newMsg) {
    if(newMsg.msgPrivacy === "private") {
@@ -36,19 +36,25 @@ function returnMsgInfo(msgNumber, msgArray, listId) {
       }
     }
   }
-}
+};
 
 function searchMsg(msgName, msgArray) {
-  console.log("here");
   for(var index = 0; index < msgArray.length; index++) {
-    console.log("here1");
-    console.log(msgArray[index].msgName);
     if(msgArray[index].msgTitle === msgName) {
-      console.log("here2");
       $("#matched-msgs").html("<li class='msgList' id='msgNumber" + msgArray[index].msgNumber + "'> FOUND: " + msgArray[index].msgTitle + " - " + msgArray[index].msgPrivacy + "</li>")
     }
   }
-}
+};
+
+function dupMsgName(msgArray, msgName) {
+  for(var index = 0; index < msgArray.length; index++) {
+    if(msgArray[index].msgTitle === msgName) {
+      var newName = prompt("Theres already a message with that name, choose another name!");
+      dupsMsgName(msgArray, newName);
+    }
+  }
+  return msgName;
+};
 
 //User Logic
 $(function() {
@@ -60,6 +66,7 @@ var msgCounter = 0;
     var msgTitle = $("input#msg-title").val();
     var msgPrivacy = $("input:radio[name=privacy]:checked").val();
     var msgBody = $("textarea#msg-body").val();
+    msgTitle = dupMsgName(msgArray, msgTitle);
     var newMsg = new Message(msgTitle, msgPrivacy, msgBody);
     newMsg = checkForPrivate(newMsg);
     newMsg.msgNumber = "msgNumber" + msgCounter;
