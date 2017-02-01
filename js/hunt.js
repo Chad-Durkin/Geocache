@@ -1,8 +1,9 @@
-function Hunt(huntName, huntDifficulty, huntDescription) {
+function Hunt(huntName, huntDifficulty, huntDescription, hunterCounter) {
   this.huntName = huntName;
   this.huntDifficulty = huntDifficulty;
   this.huntOptions = [];
   this.huntDescription = huntDescription;
+  this.huntCounter = huntCounter;
 }
 
 //Added in comment for commit sake
@@ -37,7 +38,8 @@ var listCounter = 1;
     var huntName = $("input#hunt-name").val();
     var huntDifficulty = $("input:radio[name=difficultyCreate]:checked").val();
     var huntDescription = $("textarea#hunt-description").val();
-    var theHunt = new Hunt(huntName, huntDifficulty, huntDescription);
+    var huntCounter = "hunt" + listCounter;
+    var theHunt = new Hunt(huntName, huntDifficulty, huntDescription, huntCounter);
     $("input:checkbox[name=huntOptions]:checked").each(function() {
       theHunt.huntOptions.push($(this).val());
     });
@@ -46,10 +48,23 @@ var listCounter = 1;
     $(".create").hide();
     $(".home").show();
 
-    $("#current-hunts").append("<li class='currentHuntList" + listCounter + "'> <strong>Hunt Name:</strong> <em>" + theHunt.huntName + "</em> <strong>Difficulty:</strong> <em>" + theHunt.huntDifficulty + "</em></li>");
-    $(".currentHuntList" + listCounter).append("<p class='currentHuntListInfo" + listCounter + "'> <strong>Description:</strong> <em>" + theHunt.huntDescription + "</em></p>");
+    $("#current-hunts").append("<li> <strong>Hunt Name:</strong> <em><span class='currentHunts' id='hunt" + listCounter + "'>" + theHunt.huntName + "</span></em> <strong>Difficulty:</strong> <em>" + theHunt.huntDifficulty + "</em></li>");
+    $(".currentHuntList" + listCounter).append("<p> <strong>Description:</strong> <em>" + theHunt.huntDescription + "</em></p>");
     listCounter++;
+    // $(".currentHunts").click(function(event) {
+    //   event.preventDefault();
+    //   $(".home").hide();
+    //   $(".search").hide();
+    //   $(".create").hide();
+    // });
   });
+
+  // $(".currentHunts").click(function(event) {
+  //   event.preventDefault();
+  //   $(".home").hide();
+  //   $(".search").hide();
+  //   $(".create").hide();
+  // });
 
 $(".searchHunt").submit(function(event) {
     event.preventDefault();
