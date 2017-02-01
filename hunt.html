@@ -32,18 +32,20 @@
           <div class="home body">
             <h1>Current Hunts</h1>
             <ul id="current-hunts">
-              <!-- <li><strong>Hunt Name</strong> <em><span class="currentHunts" id='hunt0'>Demo Hunt! Check out the teams hunt for you!</span></em> <strong>Difficulty:</strong> <em>Journeyman</em></li>
-              <p><strong>Description:</strong> <em>This is our demo hunt! We will fill in a more appropriate description for it later, but right now we are giving you, the user, an idea of what you will be able to see on this site and use on this site, but for now this will be an overview or a basic description of this hunt, some expectations, some advice, what you will be seeing or doing on this hunt, and anything else the hunt create feels useful for the people who wants to choose to do his hunt.</em></p> -->
+              <li><strong>Hunt Name</strong> <em><span class="currentHunts" id='hunt0'>Demo Hunt! Check out the teams hunt for you!</span></em> <strong>Difficulty:</strong> <em>Journeyman</em></li>
+              <p><strong>Description:</strong> <em>This is our demo hunt! We will fill in a more appropriate description for it later, but right now we are giving you, the user, an idea of what you will be able to see on this site and use on this site, but for now this will be an overview or a basic description of this hunt, some expectations, some advice, what you will be seeing or doing on this hunt, and anything else the hunt create feels useful for the people who wants to choose to do his hunt.</em></p>
             </ul>
           </div>
           <!-- Show Hunt Body -->
           <div class="showHunt Body">
             <h1 class="showHuntHeader"></h1>
             <h2 class="showHuntDifficulty"></h2>
+            <h2>Geohunt Gear Requirements: </h2>
             <ul class="showHuntGearRequired">
             </ul>
             <ul class="showHuntObstacles">
             </ul>
+            <h2>GeoHunt Description: </h2>
             <p class="showHuntDescription"></p>
             <ul class="showHuntSteps">
             </ul>
@@ -67,19 +69,34 @@
               <div class="form-group">
                 <h2>Gear Required</h2>
                 <label for="gear">Hiking Boots</label>
-                <input type="checkbox" name="huntOptions" value="hikingBoots">
+                <input type="checkbox" name="huntOptions" value="Hiking Boots">
                 <label for="gear">Backpack</label>
-                <input type="checkbox" name="huntOptions" value="backpack">
+                <input type="checkbox" name="huntOptions" value="Backpack">
                 <label for="gear">Sleeping Bag</label>
-                <input type="checkbox" name="huntOptions" value="sleepingbag">
+                <input type="checkbox" name="huntOptions" value="Sleeping Bag">
                 <label for="gear">Bear Spray</label>
-                <input type="checkbox" name="huntOptions" value="bearSpray">
+                <input type="checkbox" name="huntOptions" value="Bear Spray">
               </div>
                 <div class="form-group">
                   <h3>Hunt Description:</h3>
                   <textarea placeholder="Enter Description Here..." class="form-control" id="hunt-description" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Create Hunt</button>
+                <h3>Hunt Steps:</h3>
+                <div class="row">
+                  <div class="col-md-9">
+                    <div class="form-group">
+                      <h4>Step 1: </h4>
+                      <input type="text" class="form-control steps" name="steps" id="step-one" required>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <h4>Coords: </h4>
+                      <input type="number" class="form-control coords" name="coords" id="step-one-coord" required>
+                    </div>
+                  </div>
+                </div>
+              <button type="submit" class="btn btn-primary">Create Hunt</button>
             </form>
           </div>
           <!-- Search Body -->
@@ -97,13 +114,13 @@
               <div class="form-group">
                 <h2>Gear Required</h2>
                 <label for="gear">Hiking Boots</label>
-                <input type="checkbox" name="huntOptions" value="hikingBoots">
+                <input type="checkbox" name="huntOptions" value="Hiking Boots">
                 <label for="gear">Backpack</label>
-                <input type="checkbox" name="huntOptions" value="backpack">
+                <input type="checkbox" name="huntOptions" value="Backpack">
                 <label for="gear">Sleeping Bag</label>
-                <input type="checkbox" name="huntOptions" value="sleepingbag">
+                <input type="checkbox" name="huntOptions" value="Sleeping Bag">
                 <label for="gear">Bear Spray</label>
-                <input type="checkbox" name="huntOptions" value="bearSpray">
+                <input type="checkbox" name="huntOptions" value="Bear Spray">
               </div>
               <h2 id="no-matches">Sorry no matches found!</h2>
               <div class="matchedHunts">

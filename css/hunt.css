@@ -6,6 +6,15 @@ body {
     color: orange;
 }
 
+.sidebar {
+  color: white;
+}
+
+#current-hunts {
+  color: orange;
+  font-size: 20px;
+}
+
 .jumbotron {
   background-color: rgba(0, 0, 0, 0);
   text-align: center;
@@ -23,8 +32,40 @@ body {
   display: none;
 }
 
+.showHunt li{
+  font-size: 20px;
+}
+
+.showHuntDescription {
+  font-size: 20px;
+}
+
+.steps{
+  float: left;
+}
 #no-matches {
   display: none;
+}
+
+#hunt-description {
+  min-width: 700px;
+  max-width: 700px;
+  min-height: 150px;
+  max-height: 150px;
+}
+
+#hunt-name {
+  min-width: 700px;
+  max-width: 700px;
+}
+
+.steps {
+  min-width: 600px;
+  max-width: 600px;
+}
+
+.coords {
+  
 }
 
 #nav-bar {
@@ -37,19 +78,8 @@ body {
   padding-top: 13px;
 }
 
-.navbarText a{
+.navbarText a {
   padding-left: 20px;
   padding-right: 20px;
-}
-
-#hunt-description {
-  min-width: 700px;
-  max-width: 700px;
-  min-height: 300px;
-  max-height: 300px;
-}
-
-#hunt-name {
-  min-width: 700px;
-  max-width: 700px;
+  color: white;
 }
