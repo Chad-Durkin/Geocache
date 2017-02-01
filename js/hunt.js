@@ -4,7 +4,7 @@ function Hunt(huntName, huntDifficulty, huntDescription, huntCounter) {
   this.huntOptions = [];
   this.huntDescription = huntDescription;
   this.huntCounter = huntCounter;
-}
+};
 
 //Added in comment for commit sake
 Hunt.prototype = {
@@ -43,16 +43,24 @@ function clickHunt(huntsArray) {
     }
     $(".showHunt").show();
   });
-}
+};
+
+function addStep(stepCounter) {
+  console.log("here");
+  $("#step-div").append("<div class='row'><br><div class='col-md-12'><div class='form-group'><h4>Step " + stepCounter + ": </h4><input type='text' class='form-control steps' name='steps' id='step" + stepCounter + "' required></div></div></div><div class='row'><div class='col-md-4'><div class='form-group'><h4>Latitude: </h4><select class='form-control compass'><option>N</option><option>S</option></select><input type='number' class='form-control degreesPre coords' name='coords' required><p class='coordPeriod'>.</p><input type='number' class='form-control degreesPost coords' name='coords' required><p class='coordDegree'>˚</p></div></div><div class='col-md-4'><div class='form-group'><h4>Longitude: </h4><select class='form-control compass'><option>E</option><option>W</option></select><input type='number' class='form-control step1Coords degreesPre coords' name='coords' required><p class='coordPeriod'>.</p><input type='number' class='form-control step1Coords degreesPost coords' name='coords' required><p class='coordDegree'>˚</p></div></div></div>");
+  return stepCounter += 1;
+};
+
 function clear() {
   $("input#hunt-name").val("");
   $("textarea#hunt-description").val("");
   $("input[name=huntOptions]").prop("checked", false);
-}
+};
 
 $(function() {
 var huntsArray = [];
 var listCounter = 1;
+var stepCounter = 2;
 var demoHunt = new Hunt("Demo Hunt! Check out the teams hunt for you!", "Journeyman", "This is our demo hunt! We will fill in a more appropriate description for it later, but right now we are giving you, the user, an idea of what you will be able to see on this site and use on this site, but for now this will be an overview or a basic description of this hunt, some expectations, some advice, what you will be seeing or doing on this hunt, and anything else the hunt create feels useful for the people who wants to choose to do his hunt.", "hunt0");
 huntsArray.push(demoHunt);
 
@@ -77,6 +85,11 @@ huntsArray.push(demoHunt);
     listCounter++;
     clickHunt(huntsArray);
   });
+
+  $("#add-step").click(function(event) {
+    event.preventDefault();
+    stepCounter = addStep(stepCounter);
+  })
 
   clickHunt(huntsArray);
 

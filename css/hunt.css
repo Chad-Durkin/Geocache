@@ -10,11 +10,6 @@ body {
   color: white;
 }
 
-#current-hunts {
-  color: orange;
-  font-size: 20px;
-}
-
 .jumbotron {
   background-color: rgba(0, 0, 0, 0);
   text-align: center;
@@ -28,6 +23,11 @@ body {
   display: none;
 }
 
+#current-hunts {
+  color: orange;
+  font-size: 20px;
+}
+/*Displayed hunts info*/
 .showHunt {
   display: none;
 }
@@ -39,10 +39,7 @@ body {
 .showHuntDescription {
   font-size: 20px;
 }
-
-.steps{
-  float: left;
-}
+/*No matching hunts when showed*/
 #no-matches {
   display: none;
 }
@@ -58,22 +55,28 @@ body {
   min-width: 700px;
   max-width: 700px;
 }
+/*Steps and Coordinate CSS*/
+.steps {
+  float: left;
+  width: 700px;
+}
 
 .coords {
   width: 70px;
 }
 
+.compass {
+  float: left;
+  width: 50px;
+  margin-right: 5px;
+}
+
 .degreesPre {
   margin-right: 3px;
-}
-
-.coordDegree {
   float: left;
-  font-size: 30px;
-  margin-left: 3px;
 }
 
-.step1Coords {
+.degreesPost {
   float: left;
 }
 
@@ -83,12 +86,17 @@ body {
   margin-right: 3px;
 }
 
-.compass {
+.coordDegree {
   float: left;
-  width: 50px;
-  margin-right: 5px;
+  font-size: 30px;
+  margin-left: 3px;
 }
-
+/*Create Hunt Button*/
+#create-hunt-btn {
+  float: right;
+  margin-right: 600px;
+}
+/*Navbar CSS*/
 #nav-bar {
   text-align: center;
   background-color: rgba(60, 70, 79, 0);

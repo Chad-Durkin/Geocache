@@ -82,12 +82,12 @@
                   <textarea placeholder="Tips, What to expect, Animals/spots to look out for, Your own thoughts, etc." class="form-control" id="hunt-description" required></textarea>
                 </div>
                 <h3>Hunt Directions:</h3>
-                <div class="step">
+                <div id="step-div">
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
                       <h4>Step 1: </h4>
-                      <input type="text" class="form-control steps" name="steps" id="step-one" required>
+                      <input type="text" class="form-control steps" name="steps" id="step1" required>
                     </div>
                   </div>
                 </div>
@@ -99,9 +99,9 @@
                           <option>N</option>
                           <option>S</option>
                         </select>
-                        <input type="number" class="form-control step1Coords degreesPre coords" name="coords" required>
+                        <input type="number" class="form-control degreesPre coords" name="coords" required>
                         <p class="coordPeriod">.</p>
-                        <input type="number" class="form-control step1Coords degreesPost coords" name="coords" required>
+                        <input type="number" class="form-control degreesPost coords" name="coords" required>
                         <p class="coordDegree">˚</p>
                       </div>
                     </div>
@@ -120,8 +120,9 @@
                     </div>
                   </div>
                 </div>
-              <button type="submit" class="btn btn-primary">Create Hunt</button>
+              <button type="submit" class="btn btn-primary" id="create-hunt-btn">Create Hunt</button>
             </form>
+            <button type="button" class="btn btn-primary" name="add-step-btn" id="add-step">Add another step</button>
           </div>
           <!-- Search Body -->
           <div class="search body">
