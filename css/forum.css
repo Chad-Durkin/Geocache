@@ -17,6 +17,15 @@ body {
   border: none;
 }
 
+.navbarText {
+  padding-top: 13px;
+}
+
+.navbarText a{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 #threadTitle {
   width: 500px;
 }
