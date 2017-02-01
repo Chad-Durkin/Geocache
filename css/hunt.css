@@ -2,8 +2,13 @@ body {
     background-image: url("../img/Yosemite 3.jpg");
     background-size: cover;
     height: 100vh;
+    background-attachment: fixed;
     /*color: #3C464F;*/
     color: #3C464F;
+}
+
+.sidebar {
+  color: white;
 }
 
 .jumbotron {
@@ -19,12 +24,81 @@ body {
   display: none;
 }
 
-.currenthuntListInfo
+#current-hunts {
+  color: orange;
+  font-size: 20px;
+}
+/*Displayed hunts info*/
+.showHunt {
+  display: none;
+}
+
+.showHunt li{
+  font-size: 20px;
+}
+
+.showHuntDescription {
+  font-size: 20px;
+}
+/*No matching hunts when showed*/
 #no-matches {
   display: none;
 }
 
-#nav-bar {
+#hunt-description {
+  min-width: 700px;
+  max-width: 700px;
+  min-height: 150px;
+  max-height: 150px;
+}
+
+#hunt-name {
+  min-width: 700px;
+  max-width: 700px;
+}
+/*Steps and Coordinate CSS*/
+.steps {
+  float: left;
+  width: 700px;
+}
+
+.coords {
+  width: 70px;
+}
+
+.compass {
+  float: left;
+  width: 50px;
+  margin-right: 5px;
+}
+
+.degreesPre {
+  margin-right: 3px;
+  float: left;
+}
+
+.degreesPost {
+  float: left;
+}
+
+.coordPeriod {
+  float: left;
+  font-size: 30px;
+  margin-right: 3px;
+}
+
+.coordDegree {
+  float: left;
+  font-size: 30px;
+  margin-left: 3px;
+}
+/*Create Hunt Button*/
+#create-hunt-btn {
+  float: right;
+  margin-right: 600px;
+}
+/*Navbar CSS*/
+/*#nav-bar {
   text-align: center;
   background-color: rgba(60, 70, 79, 0);
   border: none;
@@ -34,19 +108,8 @@ body {
   padding-top: 13px;
 }
 
-.navbarText a{
+.navbarText a {
   padding-left: 20px;
   padding-right: 20px;
-}
-
-#hunt-description {
-  min-width: 700px;
-  max-width: 700px;
-  min-height: 300px;
-  max-height: 300px;
-}
-
-#hunt-name {
-  min-width: 700px;
-  max-width: 700px;
-}
+  color: white;
+}*/

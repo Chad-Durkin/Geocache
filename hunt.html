@@ -32,20 +32,23 @@
           <div class="home body">
             <h1>Current Hunts</h1>
             <ul id="current-hunts">
-              <li class='currentHuntList0'><strong>Hunt Name:</strong> <em>Demo Hunt! Check out the teams hunt for you!</em> <strong>Difficulty:</strong> <em>Journeyman</em></li>
-              <p class='currentHuntListInfo0'> <strong>Description:</strong> <em>This is our demo hunt! We will fill in a more appropriate description for it later, but right now we are giving you, the user, an idea of what you will be able to see on this site and use on this site, but for now this will be an overview or a basic description of this hunt, some expectations, some advice, what you will be seeing or doing on this hunt, and anything else the hunt create feels useful for the people who wants to choose to do his hunt.</em></p>
+              <li><strong>Hunt Name</strong> <em><span class="currentHunts" id='hunt0'>Demo Hunt! Check out the teams hunt for you!</span></em> <strong>Difficulty:</strong> <em>Journeyman</em></li>
+              <p><strong>Description:</strong> <em>This is our demo hunt! We will fill in a more appropriate description for it later, but right now we are giving you, the user, an idea of what you will be able to see on this site and use on this site, but for now this will be an overview or a basic description of this hunt, some expectations, some advice, what you will be seeing or doing on this hunt, and anything else the hunt create feels useful for the people who wants to choose to do his hunt.</em></p>
             </ul>
           </div>
           <!-- Show Hunt Body -->
           <div class="showHunt Body">
             <h1 class="showHuntHeader"></h1>
             <h2 class="showHuntDifficulty"></h2>
+            <h2>Geohunt Gear Requirements: </h2>
             <ul class="showHuntGearRequired">
             </ul>
             <ul class="showHuntObstacles">
             </ul>
+            <h2>GeoHunt Description: </h2>
             <p class="showHuntDescription"></p>
-            <ul class="showHuntSteps">
+            <h2>GeoHunt Steps: </h2>
+            <ul class="showHuntsSteps">
             </ul>
           </div>
           <!-- Create Body -->
@@ -67,20 +70,60 @@
               <div class="form-group">
                 <h2>Gear Required</h2>
                 <label for="gear">Hiking Boots</label>
-                <input type="checkbox" name="huntOptions" value="hikingBoots">
+                <input type="checkbox" name="huntOptions" value="Hiking Boots">
                 <label for="gear">Backpack</label>
-                <input type="checkbox" name="huntOptions" value="backpack">
+                <input type="checkbox" name="huntOptions" value="Backpack">
                 <label for="gear">Sleeping Bag</label>
-                <input type="checkbox" name="huntOptions" value="sleepingbag">
+                <input type="checkbox" name="huntOptions" value="Sleeping Bag">
                 <label for="gear">Bear Spray</label>
-                <input type="checkbox" name="huntOptions" value="bearSpray">
+                <input type="checkbox" name="huntOptions" value="Bear Spray">
               </div>
                 <div class="form-group">
                   <h3>Hunt Description:</h3>
-                  <textarea placeholder="Enter Description Here..." class="form-control" id="hunt-description" required></textarea>
+                  <textarea placeholder="Tips, What to expect, Animals/spots to look out for, Your own thoughts, etc." class="form-control" id="hunt-description" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Create Hunt</button>
+                <h3>Hunt Directions:</h3>
+                <div id="step-div">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <h4>Step 1: </h4>
+                      <input type="text" class="form-control steps" name="steps" id="step1" required>
+                    </div>
+                  </div>
+                </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <h4>Latitude: </h4>
+                        <select class="form-control compass" id="latCompass">
+                          <option value="N">N</option>
+                          <option value="S">S</option>
+                        </select>
+                        <input type="number" class="form-control degreesPre coords" name="coord1" required>
+                        <p class="coordPeriod">.</p>
+                        <input type="number" class="form-control degreesPost coords" name="coord1" required>
+                        <p class="coordDegree">˚</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <h4>Longitude: </h4>
+                        <select class="form-control compass" id="longCompass">
+                          <option value="E">E</option>
+                          <option value="W">W</option>
+                        </select>
+                        <input type="number" class="form-control step1Coords degreesPre coords" name="coord1" required>
+                        <p class="coordPeriod">.</p>
+                        <input type="number" class="form-control step1Coords degreesPost coords" name="coord1" required>
+                        <p class="coordDegree">˚</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <button type="submit" class="btn btn-primary" id="create-hunt-btn">Create Hunt</button>
             </form>
+            <button type="button" class="btn btn-primary" name="add-step-btn" id="add-step">Add another step</button>
           </div>
           <!-- Search Body -->
           <div class="search body">
@@ -97,13 +140,13 @@
               <div class="form-group">
                 <h2>Gear Required</h2>
                 <label for="gear">Hiking Boots</label>
-                <input type="checkbox" name="huntOptions" value="hikingBoots">
+                <input type="checkbox" name="huntOptions" value="Hiking Boots">
                 <label for="gear">Backpack</label>
-                <input type="checkbox" name="huntOptions" value="backpack">
+                <input type="checkbox" name="huntOptions" value="Backpack">
                 <label for="gear">Sleeping Bag</label>
-                <input type="checkbox" name="huntOptions" value="sleepingbag">
+                <input type="checkbox" name="huntOptions" value="Sleeping Bag">
                 <label for="gear">Bear Spray</label>
-                <input type="checkbox" name="huntOptions" value="bearSpray">
+                <input type="checkbox" name="huntOptions" value="Bear Spray">
               </div>
               <h2 id="no-matches">Sorry no matches found!</h2>
               <div class="matchedHunts">
@@ -115,9 +158,9 @@
           </div>
         </div>
       </div>
-        <nav class="navbar navbar-default navbar-fixed-bottom" id="nav-bar">
+        <!-- <nav class="navbar navbar-default navbar-fixed-bottom" id="nav-bar">
           <p class="navbarText"><a href="index.html">HOME</a> <a href="forum.html">FORUM</a> <a href="msg.html">MESSAGE BOARD</a> </p>
-        </nav>
+        </nav> -->
     </div>
   </body>
 </html>
