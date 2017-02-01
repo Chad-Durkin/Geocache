@@ -47,7 +47,8 @@
             </ul>
             <h2>GeoHunt Description: </h2>
             <p class="showHuntDescription"></p>
-            <ul class="showHuntSteps">
+            <h2>GeoHunt Steps: </h2>
+            <ul class="showHuntsSteps">
             </ul>
           </div>
           <!-- Create Body -->
@@ -95,26 +96,26 @@
                     <div class="col-md-4">
                       <div class="form-group">
                         <h4>Latitude: </h4>
-                        <select class="form-control compass">
-                          <option>N</option>
-                          <option>S</option>
+                        <select class="form-control compass" id="latCompass">
+                          <option value="N">N</option>
+                          <option value="S">S</option>
                         </select>
-                        <input type="number" class="form-control degreesPre coords" name="coords" required>
+                        <input type="number" class="form-control degreesPre coords" name="coord1" required>
                         <p class="coordPeriod">.</p>
-                        <input type="number" class="form-control degreesPost coords" name="coords" required>
+                        <input type="number" class="form-control degreesPost coords" name="coord1" required>
                         <p class="coordDegree">˚</p>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
                         <h4>Longitude: </h4>
-                        <select class="form-control compass">
-                          <option>E</option>
-                          <option>W</option>
+                        <select class="form-control compass" id="longCompass">
+                          <option value="E">E</option>
+                          <option value="W">W</option>
                         </select>
-                        <input type="number" class="form-control step1Coords degreesPre coords" name="coords" required>
+                        <input type="number" class="form-control step1Coords degreesPre coords" name="coord1" required>
                         <p class="coordPeriod">.</p>
-                        <input type="number" class="form-control step1Coords degreesPost coords" name="coords" required>
+                        <input type="number" class="form-control step1Coords degreesPost coords" name="coord1" required>
                         <p class="coordDegree">˚</p>
                       </div>
                     </div>
@@ -157,9 +158,9 @@
           </div>
         </div>
       </div>
-        <nav class="navbar navbar-default navbar-fixed-bottom" id="nav-bar">
+        <!-- <nav class="navbar navbar-default navbar-fixed-bottom" id="nav-bar">
           <p class="navbarText"><a href="index.html">HOME</a> <a href="forum.html">FORUM</a> <a href="msg.html">MESSAGE BOARD</a> </p>
-        </nav>
+        </nav> -->
     </div>
   </body>
 </html>

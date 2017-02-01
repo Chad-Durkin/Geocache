@@ -2,6 +2,7 @@ body {
     background-image: url("../img/Yosemite 3.jpg");
     background-size: cover;
     height: 100vh;
+    background-attachment: fixed;
     /*color: #3C464F;*/
     color: orange;
 }
@@ -97,7 +98,7 @@ body {
   margin-right: 600px;
 }
 /*Navbar CSS*/
-#nav-bar {
+/*#nav-bar {
   text-align: center;
   background-color: rgba(60, 70, 79, 0);
   border: none;
@@ -111,4 +112,4 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   color: white;
-}
+}*/
