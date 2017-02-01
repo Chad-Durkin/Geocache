@@ -38,6 +38,18 @@ function returnMsgInfo(msgNumber, msgArray, listId) {
   }
 }
 
+function searchMsg(msgName, msgArray) {
+  console.log("here");
+  for(var index = 0; index < msgArray.length; index++) {
+    console.log("here1");
+    console.log(msgArray[index].msgName);
+    if(msgArray[index].msgTitle === msgName) {
+      console.log("here2");
+      $("#matched-msgs").html("<li class='msgList' id='msgNumber" + msgArray[index].msgNumber + "'> FOUND: " + msgArray[index].msgTitle + " - " + msgArray[index].msgPrivacy + "</li>")
+    }
+  }
+}
+
 //User Logic
 $(function() {
 var msgArray = [];
@@ -55,7 +67,7 @@ var msgCounter = 0;
 
     $("#current-messages").append("<li class='msgList' id='msgNumber" + msgCounter + "'>" + newMsg.msgTitle + " - " + newMsg.msgPrivacy + "</li>");
     $("#msgNumber" + msgCounter).append("<p class='msgDescription' id='msgDescription" + msgCounter + "'> Message: " + newMsg.msgBody + "</p>");
-
+    msgCounter++;
     clear();
     $(".create").hide();
     $(".search").hide();
@@ -65,9 +77,12 @@ var msgCounter = 0;
       returnMsgInfo(this.id, msgArray, this);
     });
 
-    msgCounter++;
+    $(".searchMessage").submit(function(event) {
+      event.preventDefault();
+      var msgName = $("input#search-name").val();
+      searchMsg(msgName, msgArray);
+    })
   });
-
 
   $("#create-sidebar").click(function(event) {
   event.preventDefault();
