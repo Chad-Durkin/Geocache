@@ -88,26 +88,22 @@
               <br>
             </ul>
           </div>
-          </div>
-          <div class="row display">
-            <div class="col-md-5">
-              <div class="response">
-                <label for="threadTitle">If you would like to respond to a thread, please enter the thread title:</label>
-                <input id="responseTitle" type="text" name="responseThread"><br>
-                <label for="responseBody">Please enter your response here.</label>
-                <textarea id="responseBody" name="name" rows="5" cols="40"></textarea><br>
-                <button id="responseClick" type="button">Respond</button>
-              </div>
-            </div>
-            <div class="col-md-5">
-              <div class="responseText">
-                <h3 class="textTitle"></h3>
-                <span class="textBody"></span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="responses">
+          <h1>Reponses</h1>
+          <label for="responseTitle">Title of thread you would like to respond to:</label>
+          <input id="responseTitle" type="text" name="responseTitle"><br>
+          <textarea id="responseBody" name="name" rows="7" cols="75" placeholder="Your Response..."></textarea><br>
+          <button id="submit1" type="submit">Submit</button>
+          <ul class="responseList">
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </body>
