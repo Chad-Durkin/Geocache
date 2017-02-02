@@ -20,7 +20,7 @@ _Functionality is smooth, scaling problems may occur but other than that, none_
 
 ## Support and contact details
 
-_If you have any questions or comments please contact one of us via email at ahmeds5@uw.edu, Chaddurkin@gmail.com_
+_If you have any questions or comments please contact one of us via email at ahmeds5@uw.edu, mija.sand@gmail.com, bcooper085@gmail.com, Chaddurkin@gmail.com_
 
 ## Technologies Used
 
@@ -46,4 +46,4 @@ _If you have any questions or comments please contact one of us via email at ahm
 
 *This software is under the GPL license.*
 
-Copyright (c) 2017 **_Chad Durkin_**
+Copyright (c) 2017 **_Said Ahmed, Brandon Cooper, Sandro Mijatovic, Chad Durkin_**
