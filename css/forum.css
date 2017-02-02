@@ -6,6 +6,18 @@ body {
     height: 100vh;
 }
 
+input, textarea {
+  color: black;
+}
+
+.button {
+  display: none;
+}
+
+.display {
+  display: none;
+}
+
 li {
   font-size: 20px;
   list-style: none;
@@ -49,7 +61,7 @@ li {
   font-size: 15px;
 }
 
-#submit {
+#submit, #responseClick {
   color: blue;
 }
 
