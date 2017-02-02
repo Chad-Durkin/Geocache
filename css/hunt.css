@@ -2,7 +2,6 @@ body {
     background-image: url("../img/Mountain Range.jpg");
     background-size: cover;
     height: 100vh;
-    background-attachment: fixed;
     color: white;
 }
 

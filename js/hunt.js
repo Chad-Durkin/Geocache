@@ -33,6 +33,7 @@ function clickSearch(huntsArray) {
     $(".home").hide();
     $(".search").hide();
     $(".create").hide();
+    $(".showHuntsSteps").empty();
     for (var index = 0; index < huntsArray.length; index++) {
       console.log($(this).attr('class'));
       if(huntsArray[index].huntCounter === $(this).attr('class').split(' ')[1]) {
@@ -56,12 +57,13 @@ function clickSearch(huntsArray) {
 }
 
 function clickHunt(huntsArray) {
-  $(".currentHunts").last().click(function(event) {
+  $(".currentHunts").click(function(event) {
     event.preventDefault();
     $(".showHuntGearRequired").empty();
     $(".home").hide();
     $(".search").hide();
     $(".create").hide();
+    $(".showHuntsSteps").empty();
     for (var index = 0; index < huntsArray.length; index++) {
       console.log($(this).attr('class'));
       if(huntsArray[index].huntCounter === $(this).attr('class').split(' ')[1]) {
@@ -105,11 +107,22 @@ function clear(stepCounter) {
 
 $(function() {
 var huntsArray = [];
-var listCounter = 1;
+var listCounter = 2;
 var stepCounter = 2;
 var eachStep = 1;
-var demoHunt = new Hunt("Demo Hunt! Check out the teams hunt for you!", "journeyman", "This is our demo hunt! We will fill in a more appropriate description for it later, but right now we are giving you, the user, an idea of what you will be able to see on this site and use on this site, but for now this will be an overview or a basic description of this hunt, some expectations, some advice, what you will be seeing or doing on this hunt, and anything else the hunt create feels useful for the people who wants to choose to do his hunt.", "hunt0");
+var demoHunt = new Hunt("Demo Hunt!", "Journeyman", "This is our demo hunt! We will fill in a more appropriate description for it later, but right now we are giving you, the user, an idea of what you will be able to see on this site and use on this site, but for now this will be an overview or a basic description of this hunt, some expectations, some advice, what you will be seeing or doing on this hunt, and anything else the hunt create feels useful for the people who wants to choose to do his hunt.", "hunt0");
 huntsArray.push(demoHunt);
+var snoqualmieHunt = new Hunt("Snoqualmie Falls Hike", "Journeyman", "On this hike to the beautiful Snoqualmie Falls you will encounter a few obstacles! There has been reports of a brown bear in the area so make sure you bring your Bear Spray or a Firearm. There are a few hills and some rocks you will have to hike over but other than that you should make it to the falls easy peasy.", "hunt1");
+snoqualmieHunt.huntSteps.push("To start drive to the parking lot a few miles near the base of the falls, you can find it easy with a quick google search.");
+snoqualmieHunt.huntSteps.push("Make your way towards a pile of rocks that you will want to keep an eye out for, this is the half way marker for this hike.");
+snoqualmieHunt.huntCoordDirection.push("N");
+snoqualmieHunt.huntCoordDirection.push("W");
+snoqualmieHunt.huntStepsCoords.push([12, 345, 123, 456]);
+snoqualmieHunt.huntStepsCoords.push([13, 523, 125, 234]);
+snoqualmieHunt.huntOptions.push("Hiking Boots");
+snoqualmieHunt.huntOptions.push("Backpack");
+snoqualmieHunt.huntOptions.push("Bear Spray");
+huntsArray.push(snoqualmieHunt);
 
   $(".createHunt").submit(function(event) {
     event.preventDefault();
