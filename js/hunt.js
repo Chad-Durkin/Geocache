@@ -77,7 +77,7 @@ function clickHunt(huntsArray) {
         var stepCoord;
         for(var index2 = 0; index2 < huntsArray[index].huntSteps.length; index2++) {
           console.log("here2");
-          stepCoord = "Latitude: " + huntsArray[index].huntCoordDirection[0] + " " + huntsArray[index].huntStepsCoords[index2][0] + "." + huntsArray[index].huntStepsCoords[index2][1] + "˚ Longitude: " + huntsArray[index].huntCoordDirection[1] + " " + huntsArray[index].huntStepsCoords[index2][2] + "." + huntsArray[index].huntStepsCoords[index2][3] + "˚";
+          stepCoord = "Latitude: " + huntsArray[index].huntCoordDirection[index2][0] + " " + huntsArray[index].huntStepsCoords[index2][0] + "." + huntsArray[index].huntStepsCoords[index2][1] + "˚ Longitude: " + huntsArray[index].huntCoordDirection[index2][1] + " " + huntsArray[index].huntStepsCoords[index2][2] + "." + huntsArray[index].huntStepsCoords[index2][3] + "˚";
           $(".showHuntsSteps").append("<li><strong>Step " + (index2 + 1) + ":</strong> "  + huntsArray[index].huntSteps[index2] + "</li> <li><strong>Step " + (index2 + 1) + " Coords:</strong> " + stepCoord + "</li>");
         }
       }
@@ -107,22 +107,39 @@ function clear(stepCounter) {
 
 $(function() {
 var huntsArray = [];
-var listCounter = 2;
+var listCounter = 3;
 var stepCounter = 2;
 var eachStep = 1;
-var demoHunt = new Hunt("Demo Hunt!", "Journeyman", "This is our demo hunt! We will fill in a more appropriate description for it later, but right now we are giving you, the user, an idea of what you will be able to see on this site and use on this site, but for now this will be an overview or a basic description of this hunt, some expectations, some advice, what you will be seeing or doing on this hunt, and anything else the hunt create feels useful for the people who wants to choose to do his hunt.", "hunt0");
+var demoHunt = new Hunt("Demo Hunt!", "Novice", "This is our demo hunt! We will fill in a more appropriate description for it later, but right now we are giving you, the user, an idea of what you will be able to see on this site and use on this site, but for now this will be an overview or a basic description of this hunt, some expectations, some advice, what you will be seeing or doing on this hunt, and anything else the hunt create feels useful for the people who wants to choose to do his hunt.", "hunt0");
+demoHunt.huntSteps.push("To start drive to the parking lot a few miles near the base of the falls, you can find it easy with a quick google search.");
+demoHunt.huntSteps.push("Make your way towards a pile of rocks that you will want to keep an eye out for, this is the half way marker for this hike.");
+demoHunt.huntCoordDirection.push(["N", "E"]);
+demoHunt.huntCoordDirection.push(["S", "W"]);
+demoHunt.huntStepsCoords.push([32, 412, 43, 563]);
+demoHunt.huntStepsCoords.push([54, 234, 34, 098]);
 huntsArray.push(demoHunt);
 var snoqualmieHunt = new Hunt("Snoqualmie Falls Hike", "Journeyman", "On this hike to the beautiful Snoqualmie Falls you will encounter a few obstacles! There has been reports of a brown bear in the area so make sure you bring your Bear Spray or a Firearm. There are a few hills and some rocks you will have to hike over but other than that you should make it to the falls easy peasy.", "hunt1");
 snoqualmieHunt.huntSteps.push("To start drive to the parking lot a few miles near the base of the falls, you can find it easy with a quick google search.");
 snoqualmieHunt.huntSteps.push("Make your way towards a pile of rocks that you will want to keep an eye out for, this is the half way marker for this hike.");
-snoqualmieHunt.huntCoordDirection.push("N");
-snoqualmieHunt.huntCoordDirection.push("W");
-snoqualmieHunt.huntStepsCoords.push([12, 345, 123, 456]);
-snoqualmieHunt.huntStepsCoords.push([13, 523, 125, 234]);
+snoqualmieHunt.huntCoordDirection.push(["N", "W"]);
+snoqualmieHunt.huntCoordDirection.push(["N", "E"]);
+snoqualmieHunt.huntStepsCoords.push([12, 345, 98, 456]);
+snoqualmieHunt.huntStepsCoords.push([13, 523, 87, 234]);
 snoqualmieHunt.huntOptions.push("Hiking Boots");
 snoqualmieHunt.huntOptions.push("Backpack");
 snoqualmieHunt.huntOptions.push("Bear Spray");
 huntsArray.push(snoqualmieHunt);
+var bigFourIceCaves = new Hunt("Big Four Ice Caves", "Master", "This is a difficult hike on a narrow gravel path to views of Big Four Mountain and the caves beneath the snow. Hikers with moderate to high level experience and abilities will enjoy this challenging hunt.", "hunt2");
+bigFourIceCaves.huntSteps.push("Start at the trailhead parking lot and follow the paved pathway through the woods.");
+bigFourIceCaves.huntSteps.push("A couple miles in, marvel at a large stump laying on its side, roots facing the trail. Soon you will come to an intersection. On your right, a boardwalk crosses a marsh and leads you to a rocky mountain pass and picnic area.");
+bigFourIceCaves.huntCoordDirection.push(["S", "W"]);
+bigFourIceCaves.huntCoordDirection.push(["S", "E"]);
+bigFourIceCaves.huntStepsCoords.push([89, 897, 98, 432]);
+bigFourIceCaves.huntStepsCoords.push([98, 345, 87, 112]);
+bigFourIceCaves.huntOptions.push("Hiking Boots");
+bigFourIceCaves.huntOptions.push("Backpack");
+bigFourIceCaves.huntOptions.push("Sleeping Bag")
+huntsArray.push(bigFourIceCaves);
 
   $(".createHunt").submit(function(event) {
     event.preventDefault();
@@ -135,8 +152,8 @@ huntsArray.push(snoqualmieHunt);
     $("input:checkbox[name=huntOptions]:checked").each(function() {
       theHunt.huntOptions.push($(this).val());
     });
-    theHunt.huntCoordDirection.push($("#latCompass").val());
-    theHunt.huntCoordDirection.push($("#longCompass").val());
+    theHunt.huntCoordDirection.push([$("#latCompass").val(), $("#longCompass").val()]);
+    // theHunt.huntCoordDirection.push($("#longCompass").val());
     var coordArray = [];
     $("input[name=steps]").each(function() {
       theHunt.huntSteps.push($(this).val());
