@@ -1,9 +1,15 @@
 body {
+    background-image: url("../img/Mountain Range.jpg");
     text-align: center;
-    background-image: url("../img/El Capitan 2.jpg");
     background-size: cover;
-    background-attachment: fixed;
     height: 100vh;
+    background-attachment: fixed;
+    color: white;
+}
+
+.secondImg {
+  float: right;
+  background-attachment: fixed;
 }
 
 li {
