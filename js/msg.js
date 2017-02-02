@@ -39,6 +39,8 @@ var indexPlaceHolder;
             $(".showMsgBody").append("<li>" + msgArray[index].msgBody[j] + "</li>");
           }
           $(".showMsg").show();
+          $(".showMsgInput").show
+          $(".msgList").remove();
         } else {
           alert("You entered the incorrect password.");
         }
@@ -55,6 +57,8 @@ var indexPlaceHolder;
             $(".showMsgBody").append("<li>" + msgArray[index].msgBody[i] + "</li>");
           }
           $(".showMsg").show();
+          $(".showMsgInput").show
+          $(".msgList").remove();
       }
     }
     indexPlaceHolder = index;
@@ -93,6 +97,7 @@ function addMsgReply(index, msgArray) {
     msgArray[index].msgBody.push($("textarea#msg-reply").val());
     $(".showMsgBody").append("<li>" + outputMsg + "</li>");
     $(".showMsgInput textarea").val("");
+    $(".showMsgInput").hide();
   });
 };
 
@@ -137,6 +142,7 @@ var indexHold;
   event.preventDefault();
   clear();
   $(".showMsgBody").empty();
+  $(".msgList").remove();
   $(".showMsg").hide();
   $(".home").hide();
   $(".search").hide();
@@ -147,6 +153,7 @@ $("#search-sidebar").click(function(event) {
   event.preventDefault();
   clear();
   $(".showMsgBody").empty();
+  $(".msgList").remove();
   $(".showMsg").hide();
   $(".home").hide();
   $(".create").hide();
@@ -157,6 +164,7 @@ $("#home-sidebar").click(function(event) {
   event.preventDefault();
   clear();
   $(".showMsgBody").empty();
+  $(".msgList").remove();
   $(".showMsg").hide();
   $(".create").hide();
   $(".search").hide();
