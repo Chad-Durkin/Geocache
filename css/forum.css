@@ -20,8 +20,17 @@ input, textarea {
   display: none;
 }
 
-.display {
+.responses {
   display: none;
+  color: white;
+}
+
+.responses label {
+  font-size: 18px;
+}
+
+#responsesBody {
+    color: white;
 }
 
 li {
@@ -67,7 +76,7 @@ li {
   font-size: 15px;
 }
 
-#submit, #responseClick {
+#submit, #submit1 {
   color: blue;
 }
 
