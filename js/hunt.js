@@ -17,8 +17,7 @@ Hunt.prototype = {
     {
       for(var i = 0; i <= this.huntOptions.length; i++) {
         if(this.huntOptions[i] === searchArray[index] || this.huntDifficulty === searchArray[index]) {
-          $("#matched-hunts").append("<li class='listedHunts" + listCounter + "'> <strong>Hunt Name:</strong> <em>" + this.huntName + "</em> <strong>Difficulty:</strong> <em>" + this.huntDifficulty + "</em></li>");
-          $(".listedHunts" + listCounter).append("<p> <strong>Description:</strong> <em>" + this.huntDescription + "</em></p>");
+          $("#matched-hunts").append("<li class='listedHunts " + this.huntCounter + "'> <strong>Hunt Name:</strong> <em>" + this.huntName + "</em></li><p><strong>Difficulty:</strong> <em>" + this.huntDifficulty + "</em></p>");
           listCounter++;
           return;
         }
@@ -26,6 +25,35 @@ Hunt.prototype = {
     }
   }
 };
+
+function clickSearch(huntsArray) {
+  $(".listedHunts").last().click(function(event) {
+    event.preventDefault();
+    $(".showHuntGearRequired").empty();
+    $(".home").hide();
+    $(".search").hide();
+    $(".create").hide();
+    for (var index = 0; index < huntsArray.length; index++) {
+      console.log($(this).attr('class'));
+      if(huntsArray[index].huntCounter === $(this).attr('class').split(' ')[1]) {
+        $(".showHuntHeader").text(huntsArray[index].huntName);
+        $(".showHuntDifficulty").text("Difficulty: " + huntsArray[index].huntDifficulty);
+        huntsArray[index].huntOptions.forEach(function(option) {
+          $(".showHuntGearRequired").append("<li>" + option + "</li>");
+        })
+        console.log("here1");
+        $(".showHuntDescription").text(huntsArray[index].huntDescription);
+        var stepCoord;
+        for(var index2 = 0; index2 < huntsArray[index].huntSteps.length; index2++) {
+          console.log("here2");
+          stepCoord = "Latitude: " + huntsArray[index].huntCoordDirection[0] + " " + huntsArray[index].huntStepsCoords[index2][0] + "." + huntsArray[index].huntStepsCoords[index2][1] + "˚ Longitude: " + huntsArray[index].huntCoordDirection[1] + " " + huntsArray[index].huntStepsCoords[index2][2] + "." + huntsArray[index].huntStepsCoords[index2][3] + "˚";
+          $(".showHuntsSteps").append("<li><strong>Step " + (index2 + 1) + ":</strong> "  + huntsArray[index].huntSteps[index2] + "</li> <li><strong>Step " + (index2 + 1) + " Coords:</strong> " + stepCoord + "</li>");
+        }
+      }
+    }
+    $(".showHunt").show();
+  });
+}
 
 function clickHunt(huntsArray) {
   $(".currentHunts").last().click(function(event) {
@@ -35,7 +63,8 @@ function clickHunt(huntsArray) {
     $(".search").hide();
     $(".create").hide();
     for (var index = 0; index < huntsArray.length; index++) {
-      if(huntsArray[index].huntCounter === this.id) {
+      console.log($(this).attr('class'));
+      if(huntsArray[index].huntCounter === $(this).attr('class').split(' ')[1]) {
         $(".showHuntHeader").text(huntsArray[index].huntName);
         $(".showHuntDifficulty").text("Difficulty: " + huntsArray[index].huntDifficulty);
         huntsArray[index].huntOptions.forEach(function(option) {
@@ -66,7 +95,7 @@ function clear(stepCounter) {
   $("textarea#hunt-description").val("");
   $("input[name=huntOptions]").prop("checked", false);
   $("input#step1").val("");
-  $("input[name=coords]").val("");
+  $("input[name=coord1]").val("");
   for(var index = stepCounter - 1; index > 1; index--) {
     $(".step" + index).remove();
   }
@@ -112,8 +141,7 @@ huntsArray.push(demoHunt);
     $(".create").hide();
     $(".home").show();
 
-    $("#current-hunts").append("<li> <strong>Hunt Name:</strong> <em><span class='currentHunts' id='hunt" + listCounter + "'>" + theHunt.huntName + "</span></em> <strong>Difficulty:</strong> <em>" + theHunt.huntDifficulty + "</em></li>");
-    $(".currentHuntList" + listCounter).append("<p> <strong>Description:</strong> <em>" + theHunt.huntDescription + "</em></p>");
+    $("#current-hunts").append("<li> <strong>Hunt Name:</strong> <em><span class='currentHunts hunt" + listCounter + "'>" + theHunt.huntName + "</span></em></li><p><strong>Difficulty:</strong> <em>" + theHunt.huntDifficulty + "</em></p><p><strong>Description:</strong> <em>" + theHunt.huntDescription + "</em></p>");
     listCounter++;
     clickHunt(huntsArray);
   });
@@ -135,6 +163,7 @@ $(".searchHunt").submit(function(event) {
     for(var index = 0; index < huntsArray.length; index++) {
       huntsArray[index].searchHunt(searchArray);
     }
+    clickSearch(huntsArray);
 });
 
   $("#create-sidebar").click(function(event) {
