@@ -10,13 +10,13 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <div class="home header">
+        <div class="home header page-header">
           <h1>Community Message Board</h1>
         </div>
-        <div class="create header">
+        <div class="create header page-header">
           <h1>Create a New Message</h1>
         </div>
-        <div class="search header">
+        <div class="search header page-header">
           <h1>Search For a Message</h1>
         </div>
       </div>
@@ -39,6 +39,17 @@
             <h1 id="cur-msg">Current Messages</h1>
             <ul id="current-messages">
             </ul>
+          </div>
+          <!-- Show Message Body -->
+          <div class="showMsg body">
+            <h1 class="showMsgTitle"></h1>
+            <h2 class="showMsgPrivacy"></h2>
+            <h2>Message Body:</h2>
+            <ul class="showMsgBody"></ul>
+            <form class="showMsgInput">
+              <textarea placeholder="Reply to message.." class="form-control" id="msg-reply" name="msgReply" required></textarea>
+              <button type="button" class="btn btn-primary" id="reply-msg-btn">Reply</button>
+            </form>
           </div>
           <!-- Create Body -->
           <div class="create body">

@@ -17,6 +17,7 @@ body {
 
 .sidebar {
   color: white;
+  opacity: 0.7;
 }
 
 #home-sidebar:hover, #create-sidebar:hover, #search-sidebar:hover {]
@@ -48,9 +49,6 @@ body {
   text-align: center;
 }
 
-.pushDown {
-  margin-top: 50px;
-}
 .create {
   display: none;
 }

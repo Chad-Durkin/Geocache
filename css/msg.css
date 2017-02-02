@@ -4,8 +4,21 @@ body {
     height: 100vh;
     /*color: #3C464F;*/
     color: white;
+    margin-top: 20px;
 }
 
+.showMsg {
+  display: none;
+}
+
+#msg-reply {
+  min-width: 700px;
+  max-width: 700px;
+  min-height: 150px;
+  max-height: 150px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
 .secondImg {
   float: right;
   background-attachment: fixed;
@@ -22,6 +35,10 @@ body {
 
 .search {
   display: none;
+}
+
+.sidebar {
+  opacity: 0.7;
 }
 
 .sidebar a {
