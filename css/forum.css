@@ -1,6 +1,5 @@
 body {
     background-image: url("../img/Mountain Range.jpg");
-    text-align: center;
     background-size: cover;
     height: 100vh;
     color: white;
@@ -9,6 +8,48 @@ body {
 .secondImg {
   float: right;
   background-attachment: fixed;
+}
+
+input, textarea {
+  color: black;
+}
+
+.sidebar {
+  color: white;
+  opacity: 0.7;
+}
+
+.sidebar a {
+  color: white;
+}
+
+.sidebar a:hover {
+  color: rgb(84, 120, 154);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.jumbotron {
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+}
+
+.button {
+  display: none;
+}
+
+.responses {
+  display: none;
+  color: white;
+  text-align: center;
+}
+
+.responses label {
+  font-size: 18px;
+}
+
+#responsesBody {
+    color: white;
 }
 
 li {
@@ -20,9 +61,6 @@ li {
   margin-right: auto;
 }
 
-.results {
-  overflow: auto;
-}
 
 #output {
   color: white;
@@ -46,6 +84,15 @@ li {
   margin-left: 10px;
 }
 
+.results {
+  text-align: center;
+}
+
+#searchThreads {
+  text-align: left;
+  margin-left: 24%;
+}
+
 .search {
   font-size: 20px;
 }
@@ -54,19 +101,13 @@ li {
   font-size: 15px;
 }
 
-#submit {
-  color: blue;
-}
-
-#threadTitle {
-  width: 500px;
-}
-
 .top {
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   color: white;
 }
 
 .bottom {
   color: white;
+  text-align: left;
+  /*margin-left: 25%;*/
 }

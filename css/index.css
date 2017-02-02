@@ -1,8 +1,16 @@
 body {
-    background-image: url("../img/Yosemite 4.jpg");
+    background-image: url("../img/Mountain Range.jpg");
     background-size: cover;
     height: 100vh;
     color: white;
+    text-align: center;
+}
+
+.secondImg {
+  float: right;
+  background-attachment: fixed;
+  margin-right: 100px;
+  margin-bottom: 100px;
 }
 
 .jumbotron {
@@ -12,16 +20,6 @@ body {
 .item a {
   color: white;
   font-size: 30px;
-
-}
-
-.heading {
-  text-align: center;
-
-}
-
-.pickOne {
- color: white;
 }
 
 #myCarousel {
@@ -39,13 +37,10 @@ h3 {
 }
 
 p {
-  /*margin-top: 50px;*/
   width: 75%;
   margin-right: auto;
   margin-left: auto;
   font-size: 20px;
-
-  /*background-color: rgba(220, 220, 220, 0.6);*/
 }
 
 h4 {
@@ -56,10 +51,6 @@ h4 {
 ul {
   font-size: 20px;
   list-style: none;
-}
-
-div img {
-  border: 1px black solid;
 }
 
 a {
@@ -82,11 +73,3 @@ a {
   padding-top: 50px;
   font-size: 30px;
 }
-/*.single-item {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: 500px;
-  background-color: rgba(220, 220, 220, 0.3);
-  border-radius: 25px;
-}*/
