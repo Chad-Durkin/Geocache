@@ -9,18 +9,21 @@
 </head>
 <body>
   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="navbar">
-          <a href="hunt.html">Hunt</a><br>
-          <a href="msg.html">Messages</a><br>
-          <a href="forum.html">Forum</a><br>
-          <a href="index.html">Home</a><br>
-        </div>
+    <div class="jumbotron">
+      <div class="home header page-header">
+        <h1>Forum</h1>
       </div>
     </div>
     <div class="row top">
-      <div class="col-md-12">
+      <div class="col-md-3 sidebar">
+        <div class="sidebarClass">
+          <h3><a href="index.html">Home</a></h3>
+          <h3><a href="forum.html">Forum</a></h3>
+          <h3><a href="msg.html">Messages</a></h3>
+          <h3><a href="hunt.html">Hunt</a></h3>
+        </div>
+      </div>
+      <div class="col-md-9">
         <h1><u>Create Thread</u></h1>
         <form id="thread">
           <label for="threadTitle">Thread Title:</label>
@@ -31,7 +34,7 @@
           <input type="radio" name="name" value="Hunt Ideas">Hunt Ideas
           <input type="radio" name="name" value="Questions">Questions<br>
           <textarea id="threadBody" name="name" rows="10" cols="100"></textarea><br>
-          <button id="submit" type="submit">Submit</button>
+          <button id="submit" type="submit" class="btn btn-primary">Submit</button>
           <h3 id="output">
           </h3>
         </form>
@@ -39,17 +42,19 @@
     </div>
     <div class="row bottom">
       <div class="col-md-12">
-        <h1><u>Search threads</u></h1>
-        <h3>Please pick a category</h3>
-        <form class="search">
-          <input id="gear1" type="radio" name="name" value="Gear">Gear
-          <input id="catalogedHunts1" type="radio" name="name" value="Cataloged Hunts">Cataloged Hunts
-          <input id="huntIdeas1" type="radio" name="name" value="Hunt Ideas">Hunt Ideas
-          <input id="questions1" type="radio" name="name" value="Questions">Questions<br>
-        </form>
+        <div id="searchThreads">
+          <h1><u>Search threads</u></h1>
+          <h3>Please pick a category</h3>
+          <form class="search">
+            <input id="gear1" type="radio" name="name" value="Gear">Gear
+            <input id="catalogedHunts1" type="radio" name="name" value="Cataloged Hunts">Cataloged Hunts
+            <input id="huntIdeas1" type="radio" name="name" value="Hunt Ideas">Hunt Ideas
+            <input id="questions1" type="radio" name="name" value="Questions">Questions<br>
+          </form>
+        </div>
         <div class="results">
           <div id="gear">
-            <h1>Gear</h1>
+            <h2>Gear</h2>
             <ul class="gear">
               <li><strong><u>Thread Title</u></strong>: Boots</li>
               <li><strong><u>Thread Thread Category</u></strong>: Gear</li>
@@ -58,7 +63,7 @@
             </ul>
           </div>
           <div id="catalogedHunts">
-            <h1>Cataloged Hunts</h1>
+            <h2>Cataloged Hunts</h2>
             <ul class="catalogedHunts">
               <li><strong><u>Thread Title</u></strong>: Waterfall</li>
               <li><strong><u>Thread Thread Category</u></strong>: Cataloged Hunts</li>
@@ -67,7 +72,7 @@
             </ul>
           </div>
           <div id="huntIdeas">
-            <h1>Hunt Ideas</h1>
+            <h2>Hunt Ideas</h2>
             <ul class="huntIdeas">
               <li><strong><u>Thread Title</u></strong>: Zoe and the Swamp Monster</li>
               <li><strong><u>Thread Thread Category</u></strong>: Hunt Ideas</li>
@@ -76,7 +81,7 @@
             </ul>
           </div>
           <div id="questions">
-            <h1>Questions</h1>
+            <h2>Questions</h2>
             <ul class="questions">
               <li><strong><u>Thread Title</u></strong>: Backpacks</li>
               <li><strong><u>Thread Thread Category</u></strong>: Questions</li>
@@ -98,16 +103,16 @@
           <label for="responseTitle">Title of thread you would like to respond to:</label>
           <input id="responseTitle" type="text" name="responseTitle"><br>
           <textarea id="responseBody" name="name" rows="7" cols="75" placeholder="Your Response..."></textarea><br>
-          <button id="submit1" type="submit">Submit</button>
+          <button id="submit1" type="submit" class="btn btn-primary">Submit</button>
           <ul class="responseList">
           </ul>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="secondImg">
-     <img src="img/compass.png" alt="map"/>
-</div>
+  </div>
+  <div class="secondImg">
+    <img src="img/compass.png" alt="map"/>
+  </div>
 </body>
 </html>
