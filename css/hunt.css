@@ -11,12 +11,15 @@ body {
   background-attachment: fixed;
 }
 
+#side-header {
+  width: 200px;
+}
+
 .sidebar {
   color: white;
 }
 
-#home-sidebar:hover, #create-sidebar:hover, #search-sidebar:hover {
-  text-decoration: underline;
+#home-sidebar:hover, #create-sidebar:hover, #search-sidebar:hover {]
   cursor: pointer;
 }
 
@@ -32,6 +35,12 @@ body {
 
 .sidebar a {
   color: white;
+}
+
+.sidebar a:hover {
+  color: rgb(84, 120, 154);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .jumbotron {
@@ -94,7 +103,7 @@ body {
 
 .compass {
   float: left;
-  width: 50px;
+  width: 60px;
   margin-right: 5px;
 }
 
@@ -117,9 +126,4 @@ body {
   float: left;
   font-size: 30px;
   margin-left: 3px;
-}
-/*Create Hunt Button*/
-#create-hunt-btn {
-  float: right;
-  margin-right: 600px;
 }
