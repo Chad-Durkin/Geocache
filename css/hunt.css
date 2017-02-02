@@ -11,7 +11,18 @@ body {
 }
 
 #home-sidebar:hover, #create-sidebar:hover, #search-sidebar:hover {
-  text-decoration: underline;;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#current-hunts li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#matched-hunts li:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .sidebar a {
@@ -107,19 +118,3 @@ body {
   float: right;
   margin-right: 600px;
 }
-/*Navbar CSS*/
-/*#nav-bar {
-  text-align: center;
-  background-color: rgba(60, 70, 79, 0);
-  border: none;
-}
-
-.navbarText {
-  padding-top: 13px;
-}
-
-.navbarText a {
-  padding-left: 20px;
-  padding-right: 20px;
-  color: white;
-}*/
