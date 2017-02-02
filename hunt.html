@@ -11,31 +11,32 @@
     <div class="container">
       <div class="jumbotron">
         <div class="home header">
-          <h1>Welcome to the Hunts Page</h1>
+          <h1 class="page-header">Welcome to the Hunts Page</h1>
         </div>
         <div class="create header">
-          <h1>Create a Hunt</h1>
+          <h1 class="page-header">Create a Hunt</h1>
         </div>
         <div class="search header">
-          <h1>Search for a Hunt</h1>
+          <h1 class="page-header">Search for a Hunt</h1>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3 sidebar">
-          <h3><u>Hunt Options</u></h3>
-          <h3 id="home-sidebar">Hunts Home</h3>
-          <h3 id="create-sidebar">Create Hunt</h3>
-          <h3 id="search-sidebar">Advanced Search</h3><br/><br/>
-          <h3><u>Website Navigation</u></h3>
-          <h3><a href="index.html">Home</a></h3>
-          <h3><a href="forum.html">Forum</a></h3>
-          <h3><a href="msg.html">Messages</a></h3>
+          <h3 id="side-header" class="page-header">Hunt Directory</h3>
+          <div class="sidebarClass">
+            <h3 id="home-sidebar"><a href="#">Hunts Home</a></h3>
+            <h3 id="create-sidebar"><a href="#">Create Hunt</a></h3>
+            <h3 id="search-sidebar"><a href="#">Advanced Search</a></h3>
+            <h3><a href="index.html">Home</a></h3>
+            <h3><a href="forum.html">Forum</a></h3>
+            <h3><a href="msg.html">Messages</a></h3>
+          </div>
         </div>
         <!-- The Body Of Each Page -->
         <!-- Home Body -->
         <div class="col-md-9">
           <div class="home body">
-            <h1 class="pushDown">Current Hunts</h1>
+            <h1>Current Hunts</h1>
             <ul id="current-hunts">
               <li><strong>Hunt Name</strong> <em><span class="currentHunts hunt0" id='hunt0'>Demo Hunt! Check out the teams hunt for you!</span></em></li>
               <p><strong>Difficulty:</strong> <em>Journeyman</em></p>
@@ -99,7 +100,7 @@
                   </div>
                 </div>
                   <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                       <div class="form-group">
                         <h4>Latitude: </h4>
                         <select class="form-control compass" id="latCompass">
@@ -112,7 +113,7 @@
                         <p class="coordDegree">˚</p>
                       </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                       <div class="form-group">
                         <h4>Longitude: </h4>
                         <select class="form-control compass" id="longCompass">
@@ -127,9 +128,15 @@
                     </div>
                   </div>
                 </div>
-              <button type="submit" class="btn btn-primary" id="create-hunt-btn">Create Hunt</button>
-            </form>
-            <button type="button" class="btn btn-primary" name="add-step-btn" id="add-step">Add another step</button>
+            <div class="row">
+              <div class="col-md-2">
+                <button type="button" class="btn btn-primary" name="add-step-btn" id="add-step">Add another step</button>
+              </div>
+              <div class="col-md-2">
+                <button type="submit" class="btn btn-primary" id="create-hunt-btn">Create Hunt</button>
+              </form>
+          </div>
+          </div>
           </div>
           <!-- Search Body -->
           <div class="search body">

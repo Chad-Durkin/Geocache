@@ -10,21 +10,27 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <div class="home header">
+        <div class="home header page-header">
           <h1>Community Message Board</h1>
         </div>
-        <div class="create header">
+        <div class="create header page-header">
           <h1>Create a New Message</h1>
         </div>
-        <div class="search header">
+        <div class="search header page-header">
           <h1>Search For a Message</h1>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3 sidebar">
-          <h3 id="home-sidebar">Message Board Home</h3>
-          <h3 id="create-sidebar">Create Message</h3>
-          <h3 id="search-sidebar">Search for Message</h3>
+          <h3 class="page-header">Message Directory</h3>
+          <div class="sidebarClass">
+            <h3 id="home-sidebar"><a href="#">Message Board</a></h3>
+            <h3 id="create-sidebar"><a href="#">Create Message</a></h3>
+            <h3 id="search-sidebar"><a href="#">Search for Message</a></h3>
+            <h3><a href="index.html">Home</a></h3>
+            <h3><a href="forum.html">Forum</a></h3>
+            <h3><a href="hunt.html">Hunt</a></h3>
+          </div>
         </div>
         <!-- The Body Of Each Page -->
         <!-- Home Body -->
@@ -33,6 +39,17 @@
             <h1 id="cur-msg">Current Messages</h1>
             <ul id="current-messages">
             </ul>
+          </div>
+          <!-- Show Message Body -->
+          <div class="showMsg body">
+            <h1 class="showMsgTitle"></h1>
+            <h2 class="showMsgPrivacy"></h2>
+            <h2>Message Body:</h2>
+            <ul class="showMsgBody"></ul>
+            <form class="showMsgInput">
+              <textarea placeholder="Reply to message.." class="form-control" id="msg-reply" name="msgReply" required></textarea>
+              <button type="button" class="btn btn-primary" id="reply-msg-btn">Reply</button>
+            </form>
           </div>
           <!-- Create Body -->
           <div class="create body">
@@ -78,9 +95,9 @@
           </div>
         </div>
       </div>
-        <nav class="navbar navbar-default navbar-fixed-bottom" id="nav-bar">
-          <p class="navbarText"><a href="index.html">HOME</a> <a href="forum.html">FORUM</a> <a href="hunt.html">HUNT</a> </p>
-        </nav>
+    </div>
+    <div class="secondImg">
+         <img src="img/compass.png" alt="map"/>
     </div>
   </body>
 </html>

@@ -11,12 +11,16 @@ body {
   background-attachment: fixed;
 }
 
-.sidebar {
-  color: white;
+#side-header {
+  width: 200px;
 }
 
-#home-sidebar:hover, #create-sidebar:hover, #search-sidebar:hover {
-  text-decoration: underline;
+.sidebar {
+  color: white;
+  opacity: 0.7;
+}
+
+#home-sidebar:hover, #create-sidebar:hover, #search-sidebar:hover {]
   cursor: pointer;
 }
 
@@ -34,14 +38,17 @@ body {
   color: white;
 }
 
+.sidebar a:hover {
+  color: rgb(84, 120, 154);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .jumbotron {
   background-color: rgba(0, 0, 0, 0);
   text-align: center;
 }
 
-.pushDown {
-  margin-top: 50px;
-}
 .create {
   display: none;
 }
@@ -94,7 +101,7 @@ body {
 
 .compass {
   float: left;
-  width: 50px;
+  width: 60px;
   margin-right: 5px;
 }
 
@@ -117,9 +124,4 @@ body {
   float: left;
   font-size: 30px;
   margin-left: 3px;
-}
-/*Create Hunt Button*/
-#create-hunt-btn {
-  float: right;
-  margin-right: 600px;
 }

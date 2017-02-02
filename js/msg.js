@@ -1,9 +1,9 @@
 //Business Logic
-function Message(title, privacy, body) {
+function Message(title, privacy) {
   this.msgTitle = title;
   this.msgPrivacy = privacy;
   this.msgPassword;
-  this.msgBody = body;
+  this.msgBody = [];
   this.msgNumber;
 };
 
@@ -21,21 +21,49 @@ function checkForPrivate(newMsg) {
  };
 
 function returnMsgInfo(msgNumber, msgArray, listId) {
+var indexPlaceHolder;
   for(var index = 0; index < msgArray.length; index++)
   {
     if(msgArray[index].msgNumber === msgNumber) {
       if(msgArray[index].msgPrivacy === "private") {
         var passCheck = prompt("Enter the message password");
         if(msgArray[index].msgPassword === passCheck) {
-          $(listId).children().toggle();
+          $(".showMsgBody").empty();
+          $(".home").hide();
+          $(".create").hide();
+          $(".search").hide();
+          $(".showMsgTitle").text(msgArray[index].msgTitle);
+          $(".showMsgPrivacy").text(msgArray[index].msgPrivacy);
+          for(var j = 0; j < msgArray[index].msgBody.length; j++) {
+            console.log("other");
+            $(".showMsgBody").append("<li>" + msgArray[index].msgBody[j] + "</li>");
+          }
+          $(".showMsg").show();
+          $(".showMsgInput").show
+          $(".msgList").remove();
         } else {
           alert("You entered the incorrect password.");
         }
       } else {
-        $(listId).children().toggle();
+          $(".showMsgBody").empty();
+          $("textarea#reply-msg-btn").val("");
+          $(".home").hide();
+          $(".create").hide();
+          $(".search").hide();
+          $(".showMsgTitle").text(msgArray[index].msgTitle);
+          $(".showMsgPrivacy").text(msgArray[index].msgPrivacy);
+          for(var i = 0; i < msgArray[index].msgBody.length; i++) {
+            console.log("output");
+            $(".showMsgBody").append("<li>" + msgArray[index].msgBody[i] + "</li>");
+          }
+          $(".showMsg").show();
+          $(".showMsgInput").show
+          $(".msgList").remove();
       }
     }
+    indexPlaceHolder = index;
   }
+  addMsgReply(indexPlaceHolder, msgArray);
 };
 
 function searchMsg(msgName, msgArray) {
@@ -60,10 +88,24 @@ function dupMsgName(msgArray, msgName) {
   return msgName;
 };
 
+function addMsgReply(index, msgArray) {
+  $("#reply-msg-btn").click(function(event) {
+    event.preventDefault();
+    $("#reply-msg-btn").off();
+    $("#reply-msg-btn").on();
+    var outputMsg = $("textarea#msg-reply").val();
+    msgArray[index].msgBody.push($("textarea#msg-reply").val());
+    $(".showMsgBody").append("<li>" + outputMsg + "</li>");
+    $(".showMsgInput textarea").val("");
+    $(".showMsgInput").hide();
+  });
+};
+
 //User Logic
 $(function() {
 var msgArray = [];
 var msgCounter = 0;
+var indexHold;
 
   $(".createMessage").submit(function(event) {
     event.preventDefault();
@@ -71,15 +113,16 @@ var msgCounter = 0;
     var msgPrivacy = $("input:radio[name=privacy]:checked").val();
     var msgBody = $("textarea#msg-body").val();
     msgTitle = dupMsgName(msgArray, msgTitle);
-    var newMsg = new Message(msgTitle, msgPrivacy, msgBody);
+    var newMsg = new Message(msgTitle, msgPrivacy);
+    newMsg.msgBody.push(msgBody);
     newMsg = checkForPrivate(newMsg);
     newMsg.msgNumber = "msgNumber" + msgCounter;
     msgArray.push(newMsg);
 
     $("#current-messages").append("<li class='msgList' id='msgNumber" + msgCounter + "'>" + newMsg.msgTitle + " - " + newMsg.msgPrivacy + "</li>");
-    $("#msgNumber" + msgCounter).append("<p class='msgDescription' id='msgDescription" + msgCounter + "'> Message: " + newMsg.msgBody + "</p>");
     msgCounter++;
     clear();
+    $(".showMsgBody").empty();
     $(".create").hide();
     $(".search").hide();
     $(".home").show();
@@ -98,6 +141,9 @@ var msgCounter = 0;
   $("#create-sidebar").click(function(event) {
   event.preventDefault();
   clear();
+  $(".showMsgBody").empty();
+  $(".msgList").remove();
+  $(".showMsg").hide();
   $(".home").hide();
   $(".search").hide();
   $(".create").show();
@@ -106,6 +152,9 @@ var msgCounter = 0;
 $("#search-sidebar").click(function(event) {
   event.preventDefault();
   clear();
+  $(".showMsgBody").empty();
+  $(".msgList").remove();
+  $(".showMsg").hide();
   $(".home").hide();
   $(".create").hide();
   $(".search").show();
@@ -114,6 +163,9 @@ $("#search-sidebar").click(function(event) {
 $("#home-sidebar").click(function(event) {
   event.preventDefault();
   clear();
+  $(".showMsgBody").empty();
+  $(".msgList").remove();
+  $(".showMsg").hide();
   $(".create").hide();
   $(".search").hide();
   $(".home").show();
